@@ -1,6 +1,5 @@
 import { LitElement, html } from 'lit-element';
 import { Router } from '@vaadin/router';
-// import styled from 'https://cdn.pika.dev/styled-components/^4.4.1';
 
 // TODO: Convert a functional component
 // with html like the following:
@@ -22,6 +21,9 @@ import { Router } from '@vaadin/router';
  * we pull the trigger on the impure part of our app and
  * actually write our view to the screen. */
 // render(view({ content, title }), document.body);
+
+// The whole thing can be built on something more functional like
+// Hybrids and/or Rambda.
 
 const heading = () => html`
   <h1>buildless.site</h1>
@@ -86,5 +88,3 @@ router.setRoutes([
 ])
 
 customElements.define('buildless-app', BuildlessSite);
-
-console.log('js file runs.')
