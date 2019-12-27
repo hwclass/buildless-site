@@ -1,0 +1,36 @@
+{
+  "name": "buildless-site",
+  "builds": [
+    {
+      "src": "static/*",
+      "use": "@now/static"
+    },
+    { "src": "*.html", "use": "@now/static" },
+    {
+      "src": "web_modules/*",
+      "use": "@now/static"
+    },
+    {
+      "src": "web_modules/**/*.js",
+      "use": "@now/static"
+    },
+    {
+      "src": "src/buildless-app.js",
+      "use": "@now/static"
+    },
+    {
+      "src": "api/*",
+      "use": "@now/node"
+    },
+    {
+      "src": "sw.js",
+      "use": "@now/static"
+    }
+  ],
+  "redirects": [
+    { "source": "^/favicon.ico$", "destination": "/favicon.ico" }
+  ],
+  "github": {
+    "enabled": true
+  }
+}

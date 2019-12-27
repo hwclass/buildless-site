@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <!-- <noscript><link rel="stylesheet" href="path/to/stylesheet.css"></noscript> -->
+    <script type="importmap">
+      {
+        "imports": {
+          "@vaadin/router": "/web_modules/@vaadin/router.js",
+          "lit-element": "/web_modules/lit-element.js",
+          "spectre.css": "/web_modules/spectre.css"
+        }
+      }
+    </script>
+    <!-- <script type="module">
+      import styles from "spectre.css";
+      document.adoptedStyleSheets = [...document.adoptedStyleSheets, styles];
+    </script> -->
+    <!-- <link rel="stylesheet" href="spectre.css"> -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js').then(() => {
+            console.log('ServiceWorker registered!');
+          }, (err) => {
+            console.log('ServiceWorker registration failed: ', err);
+          });
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <div id="outlet">
+      <buildless-app></buildless-app>
+    </div>
+    <script src="./src/buildless-app.js" type="module" defer></script>
+    <!-- <script nomodule src="dist/fallback.js"></script> -->
+  </body>
+</html>
