@@ -7,7 +7,7 @@
     },
     { "src": "*.html", "use": "@now/static" },
     {
-      "src": "web_modules/*",
+      "src": "web_modules/**/*",
       "use": "@now/static"
     },
     {
@@ -27,9 +27,7 @@
       "use": "@now/static"
     }
   ],
-  "redirects": [
-    { "source": "^/favicon.ico$", "destination": "/favicon.ico" }
-  ],
+  "redirects": [{ "source": "^/favicon.ico$", "destination": "/favicon.ico" }],
   "github": {
     "enabled": true
   }

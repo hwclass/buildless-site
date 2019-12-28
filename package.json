@@ -7,7 +7,7 @@
     "node": "12.x"
   },
   "scripts": {
-    "dev": "es-dev-server",
+    "dev": "es-dev-server --port 3000 --watch --node-resolve --open --app-index index.html",
     "postinstall": "pika install"
   },
   "keywords": [],
@@ -15,16 +15,24 @@
   "license": "ISC",
   "dependencies": {
     "@vaadin/router": "^1.6.0",
-    "lit-element": "^2.2.1"
+    "husky": "^3.1.0",
+    "lit-element": "^2.2.1",
+    "pretty-quick": "^2.0.1"
   },
   "devDependencies": {
     "@pika/cli": "^0.2.0",
     "@pika/web": "latest",
-    "es-dev-server": "^1.32.0"
+    "es-dev-server": "^1.32.0",
+    "prettier": "^1.19.1"
   },
   "browserslist": ">0.75%, not ie 11, not op_mini all",
   "optionalDependencies": {
     "fsevents": "*"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   },
   "vaadin": {
     "disableUsageStatistics": true
