@@ -7,7 +7,7 @@
     },
     { "src": "*.html", "use": "@now/static" },
     {
-      "src": "web_modules/**/*",
+      "src": "web_modules/*",
       "use": "@now/static"
     },
     {
