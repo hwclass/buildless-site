@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "es-dev-server --port 3000 --watch --node-resolve --open --app-index index.html",
-    "postinstall": "pika install"
+    "postinstall": "node_modules/.bin/pika install"
   },
   "keywords": [],
   "author": "",
