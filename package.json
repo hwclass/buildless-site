@@ -2,7 +2,7 @@
   "name": "buildless-site",
   "version": "1.0.0",
   "description": "A collection of sites and apps built based on ES modules",
-  "repository": "",
+  "repository": "https://github.com/hwclass/buildless-site",
   "main": "index.js",
   "engines": {
     "node": "12.x"
@@ -12,7 +12,7 @@
     "postinstall": "node_modules/.bin/pika install"
   },
   "keywords": [],
-  "author": "https://github.com/hwclass/buildless-site",
+  "author": "hwclass",
   "license": "ISC",
   "dependencies": {
     "@vaadin/router": "^1.6.0",
