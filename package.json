@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "es-dev-server --port 3000 --watch --node-resolve --open --app-index index.html",
-    "postinstall": "node_modules/.bin/pika install"
+    "postinstall": "node_modules/.bin/pika install && npx @pika/web install"
   },
   "keywords": [],
   "author": "hwclass",
