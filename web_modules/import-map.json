@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "@vaadin/router": "./@vaadin/router.js",
+    "lit-element": "./lit-element.js"
+  }
+}

@@ -27,9 +27,7 @@
       "use": "@now/static"
     }
   ],
-  "redirects": [
-    { "source": "^/favicon.ico$", "destination": "/favicon.ico" }
-  ],
+  "redirects": [{ "source": "^/favicon.ico$", "destination": "/favicon.ico" }],
   "github": {
     "enabled": true
   }
