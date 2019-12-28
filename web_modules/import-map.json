@@ -1,6 +1,6 @@
 {
   "imports": {
-    "@vaadin/router": "./@vaadin/router.js",
-    "lit-element": "./lit-element.js"
+    "htm": "./htm.js",
+    "preact": "./preact.js"
   }
 }

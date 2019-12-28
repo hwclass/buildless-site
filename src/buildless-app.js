@@ -1,5 +1,7 @@
-import { LitElement, html } from 'lit-element';
-import { Router } from '@vaadin/router';
+import { LitElement, html } from "lit-element";
+import { Router } from "@vaadin/router";
+import { Component, render } from "/web_modules/preact.js";
+import htm from "/web_modules/htm.js";
 
 // TODO: Convert a functional component
 // with html like the following:
@@ -36,19 +38,19 @@ const loading = () => html`
 class BuildlessSite extends LitElement {
   static get properties() {
     return {
-      sites: { type: Array } 
+      sites: { type: Array }
     };
   }
 
   async connectedCallback() {
     super.connectedCallback();
-    const response = await fetch('/api');
+    const response = await fetch("/api");
     this.sites = await response.json();
   }
 
   render() {
     if (!this.sites) {
-      return loading()
+      return loading();
     }
     return html`
       <style>
@@ -68,23 +70,22 @@ class BuildlessSite extends LitElement {
       </style>
       <ul>
         ${heading()}
-        ${
-          this.sites.map(
-            s =>
-              html`
-                <li>${s.title} ${s.description}</li>
-              `
-          )}
+        ${this.sites.map(
+          s =>
+            html`
+              <li>${s.title} ${s.description}</li>
+            `
+        )}
       </ul>
     `;
   }
 }
 
-const router = new Router(document.getElementById('outlet'));
+const router = new Router(document.getElementById("outlet"));
 
 router.setRoutes([
-  {path: '/', component: 'x-site'},
-  {path: '/users', component: 'x-user-list'}
-])
+  { path: "/", component: "x-site" },
+  { path: "/users", component: "x-user-list" }
+]);
 
-customElements.define('buildless-app', BuildlessSite);
+customElements.define("buildless-app", BuildlessSite);

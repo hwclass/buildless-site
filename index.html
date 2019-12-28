@@ -9,15 +9,21 @@
       }
     </script>
     <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('./sw.js').then(() => {
-            console.log('ServiceWorker registered!');
-          }, (err) => {
-            console.log('ServiceWorker registration failed: ', err);
-          });
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("./sw.js").then(
+            () => {
+              console.log("ServiceWorker registered!");
+            },
+            err => {
+              console.log("ServiceWorker registration failed: ", err);
+            }
+          );
         });
       }
+    </script>
+    <script type="module">
+      import { Component, render } from "https://cdn.pika.dev/preact/v8";
     </script>
   </head>
   <body>
