@@ -1,7 +1,0 @@
-{
-  "imports": {
-    "htm/preact": "./htm/preact.js",
-    "preact": "./preact.js",
-    "preact-fetch": "./preact-fetch.js"
-  }
-}

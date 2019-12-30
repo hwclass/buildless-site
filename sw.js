@@ -3,9 +3,11 @@ self.addEventListener("install", event => {
     caches.open("buildless-site").then(cache => {
       return cache.addAll([
         "/",
-        "./static/web_modules/preact.js",
-        "./static/web_modules/htm.js",
-        "./static/web_modules/preact-fetch.js",
+        "./static/favicon.ico",
+        "./static/hourglass.gif",
+        "./web_modules/preact.js",
+        "./web_modules/htm/preact.js",
+        "./web_modules/preact-fetch.js",
         "./src/buildless-app.js"
       ]);
     })
