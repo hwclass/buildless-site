@@ -11,7 +11,7 @@
       "use": "@now/static"
     },
     {
-      "src": "web_modules/**/*.js",
+      "src": "static/web_modules/**/*.js",
       "use": "@now/static"
     },
     {
