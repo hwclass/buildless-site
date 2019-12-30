@@ -1,71 +1,61 @@
-import { h, render } from "/static/web_modules/preact.js";
-import htm from "/static/web_modules/htm.js";
-import { withFetch } from "/static/web_modules/preact-fetch.js";
+import { render } from "/web_modules/preact.js";
+import { html } from "/web_modules/htm/preact.js";
 
-const html = htm.bind(h);
+import { withFetch } from "/web_modules/preact-fetch.js";
+
+// const html = htm.bind(h);
 
 const Heading = () => html`
-  <h1>buildless.site</h1>
+  <h1>buildnpmless.site</h1>
 `;
-
-function RepoStars({ full_name, html_url, stargazers_count }) {
-  return html`
-    <div>
-      <a href=${html_url}
-        >${full_name} 🌟<strong>${stargazers_count}</strong></a
-      >
-    </div>
-  `;
-}
 
 function Site({ title, description, url }) {
   return html`
-    <div>
-      <a href=${url}><strong>${title}</strong> ${description}</a>
-    </div>
+    <li>
+      <a href=${url}>
+        <strong>${title}: </strong>
+        ${description}
+      </a>
+    </li>
   `;
 }
 
-function Repos({ items = [] }) {
-  if (!items) {
+function Repos({ asyncState, ...data }) {
+  console.log(asyncState);
+
+  if (!Array.isArray(data.entries)) {
     return html`
-      Loading...
+      <img
+        src="https://icons8.com/vue-static/landings/animated-icons/icons/hourglass/hourglass.gif"
+        width="50"
+        height="50"
+        alt="loading..."
+      />
     `;
   }
+
   return html`
-    <div>
-      <${Heading} />
-      <ul>
-        ${items.map(
-          repo =>
-            html`
-              <${RepoStars} ...${repo} />
-            `
-        )}
-      </ul>
-    </div>
+    <${Heading} />
+    <ul>
+      ${data.entries.map(
+        item =>
+          html`
+            <${Site} ...${item} />
+          `
+      )}
+    </ul>
   `;
 }
 
-function Sites({ sites = [] }) {
-  console.log(sites);
-  return html`
-    <div>
-      <${Heading} />
-      <ul>
-        ${sites.map(
-          site =>
-            html`
-              <${Site} ...${site} />
-            `
-        )}
-      </ul>
-    </div>
-  `;
+function mapDataToProps(data) {
+  return {
+    entries: data
+  };
 }
 
-const url = props => `/api`;
-const BuildlessApp = withFetch(url)(Sites);
+// const url = '/api';
+const url = "https://www.mocky.io/v2/5e09f9fa3000008100244652";
+const BuildlessApp = withFetch(url, { mapDataToProps })(Repos);
 
 render(
   html`

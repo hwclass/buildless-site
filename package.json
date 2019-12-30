@@ -32,7 +32,7 @@
   },
   "@pika/web": {
     "webDependencies": [
-      "htm",
+      "htm/preact",
       "preact",
       "preact-fetch"
     ]

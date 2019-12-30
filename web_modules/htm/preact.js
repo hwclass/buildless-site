@@ -1,3 +1,6 @@
+import { render as E, createElement as h } from "../preact.js";
+export { Component, createElement as h } from "../preact.js";
+
 var n = function(t, r, u, e) {
     for (var p = 1; p < r.length; p++) {
       var s = r[p],
@@ -88,9 +91,14 @@ var n = function(t, r, u, e) {
           r += n[e].length + "-" + n[e];
         return u[r] || (u[r] = t(n));
       };
-function htm_module(t) {
+function e$1(t) {
   var r = n(this, e(t), arguments, []);
   return r.length > 1 ? r : r[0];
 }
 
-export default htm_module;
+function m(r, t) {
+  E(r, t, t.firstElementChild);
+}
+var n$1 = e$1.bind(h);
+
+export { n$1 as html, m as render };

@@ -5,7 +5,7 @@ export default (req, res) => {
       title: "Cookie Consent Banner",
       description:
         "An alternative cookie consent banner as a native-browser module",
-      link: "http://some-link-here.com"
+      url: "http://some-link-here.com"
     },
     {
       id: 1,
