@@ -7,11 +7,11 @@
     },
     { "src": "*.html", "use": "@now/static" },
     {
-      "src": "web_modules/*",
+      "src": "web_modules/**/*.js",
       "use": "@now/static"
     },
     {
-      "src": "web_modules/**/*.js",
+      "src": "static/web_modules/**/*.js",
       "use": "@now/static"
     },
     {
