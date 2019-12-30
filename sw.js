@@ -4,7 +4,7 @@ self.addEventListener("install", event => {
       return cache.addAll([
         "/",
         "./static/web_modules/preact.js",
-        "./static/web_modules/htm.js",
+        "./static/web_modules/htm/preact.js",
         "./static/web_modules/preact-fetch.js",
         "./src/buildless-app.js"
       ]);

@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "es-dev-server --port 3000 --watch --node-resolve --open --app-index index.html",
-    "postinstall": "rm -rf web_modules && node_modules/.bin/pika-web install && cp -r ./web_modules ./static/",
+    "postinstall": "rm -rf web_modules && rm -rf static/web_modules && node_modules/.bin/pika-web install && cp -r ./web_modules ./static/",
     "now-build": "node_modules/.bin/pika-web install"
   },
   "keywords": [],
