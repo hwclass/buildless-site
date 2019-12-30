@@ -1,9 +1,6 @@
 import { render } from "/web_modules/preact.js";
 import { html } from "/web_modules/htm/preact.js";
-
 import { withFetch } from "/web_modules/preact-fetch.js";
-
-// const html = htm.bind(h);
 
 const Heading = () => html`
   <h1>buildnpmless.site</h1>
@@ -20,16 +17,15 @@ function Site({ title, description, url }) {
   `;
 }
 
-function Repos({ asyncState, ...data }) {
-  console.log(asyncState);
-
+function Repos({ ...data }) {
   if (!Array.isArray(data.entries)) {
     return html`
       <img
-        src="https://icons8.com/vue-static/landings/animated-icons/icons/hourglass/hourglass.gif"
+        src="static/hourglass.gif"
         width="50"
         height="50"
         alt="loading..."
+        class="loading"
       />
     `;
   }
