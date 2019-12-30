@@ -53,8 +53,7 @@ function mapDataToProps(data) {
   };
 }
 
-// const url = '/api';
-const url = "https://www.mocky.io/v2/5e09f9fa3000008100244652";
+const url = "/api";
 const BuildlessApp = withFetch(url, { mapDataToProps })(Repos);
 
 render(
