@@ -11,10 +11,6 @@
       "use": "@now/static"
     },
     {
-      "src": "static/web_modules/**/*.js",
-      "use": "@now/static"
-    },
-    {
       "src": "src/buildless-app.js",
       "use": "@now/static"
     },

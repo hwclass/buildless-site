@@ -20,12 +20,12 @@ function h(n, l, u) {
   var i,
     t = arguments,
     o = {};
-  for (i in l) "key" !== i && "ref" !== i && (o[i] = l[i]);
+  for (i in l) 'key' !== i && 'ref' !== i && (o[i] = l[i]);
   if (arguments.length > 3)
     for (u = [u], i = 3; i < arguments.length; i++) u.push(t[i]);
   if (
     (null != u && (o.children = u),
-    "function" == typeof n && null != n.defaultProps)
+    'function' == typeof n && null != n.defaultProps)
   )
     for (i in n.defaultProps) void 0 === o[i] && (o[i] = n.defaultProps[i]);
   return v(n, o, l && l.key, l && l.ref);
@@ -59,7 +59,7 @@ function m(n, l) {
   if (null == l) return n.__ ? m(n.__, n.__.__k.indexOf(n) + 1) : null;
   for (var u; l < n.__k.length; l++)
     if (null != (u = n.__k[l]) && null != u.__e) return u.__e;
-  return "function" == typeof n.type ? m(n) : null;
+  return 'function' == typeof n.type ? m(n) : null;
 }
 function w(n) {
   var l, u;
@@ -151,29 +151,29 @@ function _(n, l, u, i, t, o, f, c, s) {
                 if (d == y) break n;
               n.insertBefore(y, c);
             }
-            "option" == l.type && (n.value = "");
+            'option' == l.type && (n.value = '');
           }
-          (c = y.nextSibling), "function" == typeof l.type && (l.__d = y);
+          (c = y.nextSibling), 'function' == typeof l.type && (l.__d = y);
         }
       }
       return h++, u;
     })),
     (l.__e = w),
-    null != o && "function" != typeof l.type)
+    null != o && 'function' != typeof l.type)
   )
     for (h = o.length; h--; ) null != o[h] && a(o[h]);
   for (h = _; h--; ) null != k[h] && A(k[h], k[h]);
   if (g) for (h = 0; h < g.length; h++) z(g[h], g[++h], g[++h]);
 }
 function b(n, l, u) {
-  if ((null == u && (u = []), null == n || "boolean" == typeof n))
+  if ((null == u && (u = []), null == n || 'boolean' == typeof n))
     l && u.push(l(null));
   else if (Array.isArray(n)) for (var i = 0; i < n.length; i++) b(n[i], l, u);
   else
     u.push(
       l
         ? l(
-            "string" == typeof n || "number" == typeof n
+            'string' == typeof n || 'number' == typeof n
               ? v(null, n, null, null)
               : null != n.__e || null != n.__c
               ? v(n.type, n.props, n.key, null)
@@ -187,62 +187,62 @@ function x(n, l, u, i, t) {
   var o;
   for (o in u) o in l || P(n, o, null, u[o], i);
   for (o in l)
-    (t && "function" != typeof l[o]) ||
-      "value" === o ||
-      "checked" === o ||
+    (t && 'function' != typeof l[o]) ||
+      'value' === o ||
+      'checked' === o ||
       u[o] === l[o] ||
       P(n, o, l[o], u[o], i);
 }
 function C(n, l, u) {
-  "-" === l[0]
+  '-' === l[0]
     ? n.setProperty(l, u)
     : (n[l] =
-        "number" == typeof u && !1 === c.test(l)
-          ? u + "px"
+        'number' == typeof u && !1 === c.test(l)
+          ? u + 'px'
           : null == u
-          ? ""
+          ? ''
           : u);
 }
 function P(n, l, u, i, t) {
   var o, f, r, e, c;
   if (
     (t
-      ? "className" === l && (l = "class")
-      : "class" === l && (l = "className"),
-    "key" === l || "children" === l)
+      ? 'className' === l && (l = 'class')
+      : 'class' === l && (l = 'className'),
+    'key' === l || 'children' === l)
   );
-  else if ("style" === l)
-    if (((o = n.style), "string" == typeof u)) o.cssText = u;
+  else if ('style' === l)
+    if (((o = n.style), 'string' == typeof u)) o.cssText = u;
     else {
-      if (("string" == typeof i && ((o.cssText = ""), (i = null)), i))
-        for (f in i) (u && f in u) || C(o, f, "");
+      if (('string' == typeof i && ((o.cssText = ''), (i = null)), i))
+        for (f in i) (u && f in u) || C(o, f, '');
       if (u) for (r in u) (i && u[r] === i[r]) || C(o, r, u[r]);
     }
   else
-    "o" === l[0] && "n" === l[1]
-      ? ((e = l !== (l = l.replace(/Capture$/, ""))),
+    'o' === l[0] && 'n' === l[1]
+      ? ((e = l !== (l = l.replace(/Capture$/, ''))),
         (c = l.toLowerCase()),
         (l = (c in n ? c : l).slice(2)),
         u
           ? (i || n.addEventListener(l, N, e), ((n.l || (n.l = {}))[l] = u))
           : n.removeEventListener(l, N, e))
-      : "list" !== l &&
-        "tagName" !== l &&
-        "form" !== l &&
-        "type" !== l &&
+      : 'list' !== l &&
+        'tagName' !== l &&
+        'form' !== l &&
+        'type' !== l &&
         !t &&
         l in n
-      ? (n[l] = null == u ? "" : u)
-      : "function" != typeof u &&
-        "dangerouslySetInnerHTML" !== l &&
-        (l !== (l = l.replace(/^xlink:?/, ""))
+      ? (n[l] = null == u ? '' : u)
+      : 'function' != typeof u &&
+        'dangerouslySetInnerHTML' !== l &&
+        (l !== (l = l.replace(/^xlink:?/, ''))
           ? null == u || !1 === u
             ? n.removeAttributeNS(
-                "http://www.w3.org/1999/xlink",
+                'http://www.w3.org/1999/xlink',
                 l.toLowerCase()
               )
             : n.setAttributeNS(
-                "http://www.w3.org/1999/xlink",
+                'http://www.w3.org/1999/xlink',
                 l.toLowerCase(),
                 u
               )
@@ -268,14 +268,14 @@ function T(l, u, i, t, o, f, r, e, c) {
   if (void 0 !== u.constructor) return null;
   (a = n.__b) && a(u);
   try {
-    n: if ("function" == typeof P) {
+    n: if ('function' == typeof P) {
       if (
         ((k = u.props),
         (x = (a = P.contextType) && t[a.__c]),
         (C = a ? (x ? x.props.value : a.__) : t),
         i.__c
           ? (g = (h = u.__c = i.__c).__ = h.__E)
-          : ("prototype" in P && P.prototype.render
+          : ('prototype' in P && P.prototype.render
               ? (u.__c = h = new P(k, C))
               : ((u.__c = h = new d(k, C)),
                 (h.constructor = P),
@@ -379,7 +379,7 @@ function j(n, l, u, i, t, o, f, c) {
     p,
     y = u.props,
     d = l.props;
-  if (((t = "svg" === l.type || t), null == n && null != o))
+  if (((t = 'svg' === l.type || t), null == n && null != o))
     for (s = 0; s < o.length; s++)
       if (
         null != (a = o[s]) &&
@@ -391,7 +391,7 @@ function j(n, l, u, i, t, o, f, c) {
   if (null == n) {
     if (null === l.type) return document.createTextNode(d);
     (n = t
-      ? document.createElementNS("http://www.w3.org/2000/svg", l.type)
+      ? document.createElementNS('http://www.w3.org/2000/svg', l.type)
       : document.createElement(l.type)),
       (o = null);
   }
@@ -409,17 +409,17 @@ function j(n, l, u, i, t, o, f, c) {
           y[n.attributes[p].name] = n.attributes[p].value;
       (v || h) &&
         ((v && h && v.__html == h.__html) ||
-          (n.innerHTML = (v && v.__html) || ""));
+          (n.innerHTML = (v && v.__html) || ''));
     }
     x(n, d, y, t, c),
       (l.__k = l.props.children),
-      v || _(n, l, u, i, "foreignObject" !== l.type && t, o, f, r, c),
+      v || _(n, l, u, i, 'foreignObject' !== l.type && t, o, f, r, c),
       c ||
-        ("value" in d &&
+        ('value' in d &&
           void 0 !== d.value &&
           d.value !== n.value &&
-          (n.value = null == d.value ? "" : d.value),
-        "checked" in d &&
+          (n.value = null == d.value ? '' : d.value),
+        'checked' in d &&
           void 0 !== d.checked &&
           d.checked !== n.checked &&
           (n.checked = d.checked));
@@ -428,7 +428,7 @@ function j(n, l, u, i, t, o, f, c) {
 }
 function z(l, u, i) {
   try {
-    "function" == typeof l ? l(u) : (l.current = u);
+    'function' == typeof l ? l(u) : (l.current = u);
   } catch (l) {
     n.__e(l, i);
   }
@@ -438,7 +438,7 @@ function A(l, u, i) {
   if (
     (n.unmount && n.unmount(l),
     (t = l.ref) && z(t, null, u),
-    i || "function" == typeof l.type || (i = null != (o = l.__e)),
+    i || 'function' == typeof l.type || (i = null != (o = l.__e)),
     (l.__e = l.__d = null),
     null != (t = l.__c))
   ) {
@@ -488,7 +488,7 @@ function I(n, l) {
 function L(n) {
   var l = {},
     u = {
-      __c: "__cC" + f++,
+      __c: '__cC' + f++,
       __: n,
       Consumer: function(n, l) {
         return n.children(l);
@@ -545,7 +545,7 @@ function L(n) {
   (d.prototype.setState = function(n, l) {
     var u;
     (u = this.__s !== this.state ? this.__s : (this.__s = s({}, this.state))),
-      "function" == typeof n && (n = n(u, this.props)),
+      'function' == typeof n && (n = n(u, this.props)),
       n && s(u, n),
       null != n &&
         this.__v &&
@@ -557,7 +557,7 @@ function L(n) {
   (d.prototype.render = y),
   (u = []),
   (i =
-    "function" == typeof Promise
+    'function' == typeof Promise
       ? Promise.prototype.then.bind(Promise.resolve())
       : setTimeout),
   (o = r),

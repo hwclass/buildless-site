@@ -1,4 +1,4 @@
-import { Component as d, createElement as h } from "./preact.js";
+import { Component as d, createElement as h } from './preact.js';
 
 function _defineProperty(obj, key, value) {
   if (key in obj) {
@@ -40,7 +40,7 @@ function _objectSpread(target) {
     var source = arguments[i] != null ? arguments[i] : {};
     var ownKeys = Object.keys(source);
 
-    if (typeof Object.getOwnPropertySymbols === "function") {
+    if (typeof Object.getOwnPropertySymbols === 'function') {
       ownKeys = ownKeys.concat(
         Object.getOwnPropertySymbols(source).filter(function(sym) {
           return Object.getOwnPropertyDescriptor(source, sym).enumerable;
@@ -86,7 +86,7 @@ class FetchProvider extends d {
   getChildContext() {
     // eslint-disable-next-line no-unused-vars
     let _this$props = this.props,
-      context = _objectWithoutProperties(_this$props, ["children"]);
+      context = _objectWithoutProperties(_this$props, ['children']);
 
     return context;
   }
@@ -111,19 +111,19 @@ function withAsyncState({
       RenderComponent = null;
 
     switch (asyncState) {
-      case "initial":
+      case 'initial':
         RenderComponent = InitialComponent || Component$$1;
         break;
 
-      case "loading":
+      case 'loading':
         RenderComponent = LoadingComponent || Component$$1;
         break;
 
-      case "error":
+      case 'error':
         RenderComponent = ErrorComponent || Component$$1;
         break;
 
-      case "resolved":
+      case 'resolved':
         RenderComponent = Component$$1;
         break;
     }
@@ -136,7 +136,7 @@ const fetchJSON = (url, options) =>
   fetch(url, options).then(response => response.json());
 
 const propsToURL = (url, props) =>
-  typeof url === "function" ? url(props) : url;
+  typeof url === 'function' ? url(props) : url;
 
 const cache = new Map();
 
@@ -149,9 +149,9 @@ function withFetch(url, options = {}) {
     ),
     { useCache, mapDataToProps, mapContextToProps } = _useCache$options,
     fetchOptions = _objectWithoutProperties(_useCache$options, [
-      "useCache",
-      "mapDataToProps",
-      "mapContextToProps"
+      'useCache',
+      'mapDataToProps',
+      'mapContextToProps'
     ]);
 
   return WrappedComponent => {
@@ -159,7 +159,7 @@ function withFetch(url, options = {}) {
       constructor(_props) {
         super(_props);
 
-        _defineProperty(this, "resolveAsync", async props => {
+        _defineProperty(this, 'resolveAsync', async props => {
           let rest = _extends({}, props),
             data = {};
 
@@ -169,18 +169,18 @@ function withFetch(url, options = {}) {
             data = cache.get(resolvedURL);
           } else {
             this.setState(() => ({
-              state: "loading"
+              state: 'loading'
             }));
 
             try {
               data = await fetchJSON(resolvedURL, fetchOptions);
 
-              if (typeof mapDataToProps === "function") {
+              if (typeof mapDataToProps === 'function') {
                 data = mapDataToProps(data);
               }
             } catch (ex) {
               this.setState(() => ({
-                state: "error"
+                state: 'error'
               }));
               return;
             }
@@ -190,14 +190,14 @@ function withFetch(url, options = {}) {
             useCache && cache.set(resolvedURL, data);
             return {
               data,
-              state: "resolved"
+              state: 'resolved'
             };
           });
         });
 
         this.state = {
           data: {},
-          state: "initial"
+          state: 'initial'
         };
       }
 
@@ -205,7 +205,7 @@ function withFetch(url, options = {}) {
         let initialData = _extends({}, this.context);
 
         if (initialData && Object.keys(initialData).length) {
-          if (typeof mapContextToProps === "function") {
+          if (typeof mapContextToProps === 'function') {
             initialData = mapContextToProps(initialData);
           }
 
