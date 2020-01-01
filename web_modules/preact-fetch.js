@@ -16,21 +16,19 @@ function _defineProperty(obj, key, value) {
 }
 
 function _extends() {
-  _extends =
-    Object.assign ||
-    function(target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
 
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
         }
       }
+    }
 
-      return target;
-    };
+    return target;
+  };
 
   return _extends.apply(this, arguments);
 }
@@ -41,14 +39,12 @@ function _objectSpread(target) {
     var ownKeys = Object.keys(source);
 
     if (typeof Object.getOwnPropertySymbols === 'function') {
-      ownKeys = ownKeys.concat(
-        Object.getOwnPropertySymbols(source).filter(function(sym) {
-          return Object.getOwnPropertyDescriptor(source, sym).enumerable;
-        })
-      );
+      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
+        return Object.getOwnPropertyDescriptor(source, sym).enumerable;
+      }));
     }
 
-    ownKeys.forEach(function(key) {
+    ownKeys.forEach(function (key) {
       _defineProperty(target, key, source[key]);
     });
   }
@@ -86,18 +82,19 @@ class FetchProvider extends d {
   getChildContext() {
     // eslint-disable-next-line no-unused-vars
     let _this$props = this.props,
-      context = _objectWithoutProperties(_this$props, ['children']);
+        context = _objectWithoutProperties(_this$props, ["children"]);
 
     return context;
   }
 
-  render({ children }) {
-    return (
-      (children && children[0]) ||
-      /* istanbul ignore next */
-      null
-    );
+  render({
+    children
+  }) {
+    return children && children[0] ||
+    /* istanbul ignore next */
+    null;
   }
+
 }
 
 function withAsyncState({
@@ -107,8 +104,10 @@ function withAsyncState({
   ErrorComponent
 }) {
   return props => {
-    let { asyncState } = props,
-      RenderComponent = null;
+    let {
+      asyncState
+    } = props,
+        RenderComponent = null;
 
     switch (asyncState) {
       case 'initial':
@@ -132,36 +131,31 @@ function withAsyncState({
   };
 }
 
-const fetchJSON = (url, options) =>
-  fetch(url, options).then(response => response.json());
+const fetchJSON = (url, options) => fetch(url, options).then(response => response.json());
 
-const propsToURL = (url, props) =>
-  typeof url === 'function' ? url(props) : url;
+const propsToURL = (url, props) => typeof url === 'function' ? url(props) : url;
 
 const cache = new Map();
 
 function withFetch(url, options = {}) {
-  const _useCache$options = _objectSpread(
-      {
-        useCache: false
-      },
-      options
-    ),
-    { useCache, mapDataToProps, mapContextToProps } = _useCache$options,
-    fetchOptions = _objectWithoutProperties(_useCache$options, [
-      'useCache',
-      'mapDataToProps',
-      'mapContextToProps'
-    ]);
+  const _useCache$options = _objectSpread({
+    useCache: false
+  }, options),
+        {
+    useCache,
+    mapDataToProps,
+    mapContextToProps
+  } = _useCache$options,
+        fetchOptions = _objectWithoutProperties(_useCache$options, ["useCache", "mapDataToProps", "mapContextToProps"]);
 
   return WrappedComponent => {
     return class AsyncResolve extends d {
       constructor(_props) {
         super(_props);
 
-        _defineProperty(this, 'resolveAsync', async props => {
+        _defineProperty(this, "resolveAsync", async props => {
           let rest = _extends({}, props),
-            data = {};
+              data = {};
 
           let resolvedURL = propsToURL(url, rest);
 
@@ -220,28 +214,22 @@ function withFetch(url, options = {}) {
       }
 
       componentWillReceiveProps(nextProps) {
-        let [current, next] = [
-          propsToURL(url, this.props),
-          propsToURL(url, nextProps)
-        ];
+        let [current, next] = [propsToURL(url, this.props), propsToURL(url, nextProps)];
 
         if (current !== next) {
           this.resolveAsync(nextProps);
         }
       }
 
-      render(props, { data, state: asyncState }) {
-        return h(
-          WrappedComponent,
-          _objectSpread(
-            {
-              asyncState
-            },
-            data,
-            props
-          )
-        );
+      render(props, {
+        data,
+        state: asyncState
+      }) {
+        return h(WrappedComponent, _objectSpread({
+          asyncState
+        }, data, props));
       }
+
     };
   };
 }
