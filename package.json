@@ -22,12 +22,9 @@
     "jsdom": "^15.2.1",
     "lit-element": "^2.2.1",
     "marked": "^0.8.0",
-    "md-2-json": "^1.0.6",
     "preact": "^10.1.1",
     "preact-fetch": "^1.0.0-beta.1",
-    "pretty-quick": "^2.0.1",
-    "simple-markdown": "^0.7.2",
-    "xmldom": "^0.2.1"
+    "pretty-quick": "^2.0.1"
   },
   "devDependencies": {
     "@pika/cli": "^0.2.0",
