@@ -23,6 +23,10 @@
       "use": "@now/node"
     },
     {
+      "src": "api/contents/*",
+      "use": "@now/node"
+    },
+    {
       "src": "sw.js",
       "use": "@now/static"
     }

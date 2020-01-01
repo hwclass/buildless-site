@@ -25,3 +25,28 @@ module.exports = async (req, res) => {
 ### Node.js helpers for apis on Zeit Now
 
 https://zeit.co/docs/v2/serverless-functions/supported-languages#node.js-helpers
+
+### Zeit Now customized API endpoints
+
+https://thecloud.christmas/2019/8
+
+### Use Github CDN for content
+
+```sh
+curl https://raw.githubusercontent.com/hwclass/buildless-site/master/README.md
+```
+
+### Read a readme file from github in a certain document range
+
+```sh
+curl https://raw.githubusercontent.com/hwclass/awesome-buildless/master/README.md | sed -n '/### Articles/,/### Tutorials/p'
+```
+
+### marked can be used to parse markdown from an endpoint to convert into HTML string
+
+[marked](https://github.com/markedjs/marked)
+
+### [HTMLCollection](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCollection) object collection is only iterable after applying _Array.from_
+
+```js
+```
