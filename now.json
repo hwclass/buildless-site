@@ -11,7 +11,11 @@
       "use": "@now/static"
     },
     {
-      "src": "src/client.js",
+      "src": "src/*",
+      "use": "@now/static"
+    },
+    {
+      "src": "src/components/*",
       "use": "@now/static"
     },
     {

@@ -1,4 +1,5 @@
-import css from 'csz';
+import { html } from '/web_modules/htm/preact.js';
+import css from '/web_modules/csz.js';
 
 const loadingClassName = css`
   margin: 50px auto 0;

@@ -1,24 +1,9 @@
 import { render } from '/web_modules/preact.js';
 import { html } from '/web_modules/htm/preact.js';
 import { withFetch } from '/web_modules/preact-fetch.js';
-import css from '/web_modules/csz.js';
 
-const Loading = () => html`
-  <img
-    src="static/hourglass.gif"
-    width="50"
-    height="50"
-    alt="loading..."
-    class=${css`
-      margin: 50px auto 0;
-      display: block;
-    `}
-  />
-`;
-
-const Heading = () => html`
-  <h1>buildless.site</h1>
-`;
+import Loading from './components/Loading.js';
+import Heading from './components/Heading.js';
 
 function Site({ title, description, url }) {
   return html`
@@ -52,7 +37,7 @@ function Sites({ ...data }) {
   }
 
   return html`
-    <${Heading} />
+    <${Heading} content="buildless.site" />
     <${SiteList} data=${data.entries} />
   `;
 }
