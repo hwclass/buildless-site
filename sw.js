@@ -9,7 +9,7 @@ self.addEventListener('install', event => {
         './web_modules/htm/preact.js',
         './web_modules/preact-fetch.js',
         './web_modules/csz.js',
-        './src/buildless-app.js'
+        './src/client.js'
       ]);
     })
   );

@@ -1,9 +1,6 @@
 import { render } from '/web_modules/preact.js';
 import { html } from '/web_modules/htm/preact.js';
 import { withFetch } from '/web_modules/preact-fetch.js';
-
-// import Loading from './components/Loading.js';
-
 import css from '/web_modules/csz.js';
 
 const Loading = () => html`
@@ -34,17 +31,10 @@ function Site({ title, description, url }) {
   `;
 }
 
-function Sites({ ...data }) {
-  if (!Array.isArray(data.entries)) {
-    return html`
-      <${Loading} />
-    `;
-  }
-
+function SiteList({ data }) {
   return html`
-    <${Heading} />
     <ul>
-      ${data.entries.map(
+      ${data.map(
         item =>
           html`
             <${Site} ...${item} />
@@ -54,6 +44,20 @@ function Sites({ ...data }) {
   `;
 }
 
+function Sites({ ...data }) {
+  if (!Array.isArray(data.entries)) {
+    return html`
+      <${Loading} />
+    `;
+  }
+
+  return html`
+    <${Heading} />
+    <${SiteList} data=${data.entries} />
+  `;
+}
+
+// TIP: Needed to be defined for mapping props with preact-fetch
 function mapDataToProps(data) {
   return {
     entries: data
@@ -61,11 +65,11 @@ function mapDataToProps(data) {
 }
 
 const url = '/api';
-const BuildlessApp = withFetch(url, { mapDataToProps })(Sites);
+const Client = withFetch(url, { mapDataToProps })(Sites);
 
 render(
   html`
-    <${BuildlessApp} />
+    <${Client} />
   `,
   document.querySelector('#app')
 );

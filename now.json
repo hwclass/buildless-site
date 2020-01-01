@@ -11,7 +11,7 @@
       "use": "@now/static"
     },
     {
-      "src": "src/buildless-app.js",
+      "src": "src/client.js",
       "use": "@now/static"
     },
     {
