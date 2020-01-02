@@ -11,11 +11,11 @@
       "use": "@now/static"
     },
     {
-      "src": "static/web_modules/**/*.js",
+      "src": "src/*",
       "use": "@now/static"
     },
     {
-      "src": "src/buildless-app.js",
+      "src": "src/components/*",
       "use": "@now/static"
     },
     {

@@ -2,6 +2,7 @@
   "imports": {
     "htm/preact": "./htm/preact.js",
     "preact": "./preact.js",
-    "preact-fetch": "./preact-fetch.js"
+    "preact-fetch": "./preact-fetch.js",
+    "csz": "./csz.js"
   }
 }

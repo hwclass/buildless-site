@@ -1,59 +1,58 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A collection of sites, apps built based on & packages, articles and other stuff about ES modules"
+    />
+    <meta name="theme-color" content="#FFFFFF" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <title>buildless.site</title>
     <script>
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-          navigator.serviceWorker.register("./sw.js").then(
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js').then(
             () => {
-              console.log("ServiceWorker registered!");
+              console.log('ServiceWorker registered!');
             },
             err => {
-              console.log("ServiceWorker registration failed: ", err);
+              console.log('ServiceWorker registration failed: ', err);
             }
           );
         });
       }
     </script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="/favicon-512x512.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/favicon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon-512x512.png"
+    />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="icon" href="/static/favicon.ico" type="image/x-icon" />
-    <style>
-      html {
-        font-family: sans-serif;
-        line-height: 1.15;
-        -webkit-text-size-adjust: 100%;
-        -webkit-tap-highlight-color: transparent;
-      }
-
-      body {
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
-          "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-        font-size: 1rem;
-        font-weight: 400;
-        line-height: 1.5;
-      }
-
-      .container {
-        width: 100%;
-        max-width: 1140px;
-        padding-right: 15px;
-        padding-left: 15px;
-        margin-right: auto;
-        margin-left: auto;
-      }
-
-      .loading {
-        margin: 50px auto 0;
-        display: block;
-      }
-    </style>
+    <link rel="manifest" href="/static/manifest.json" />
+    <link href="/static/index.css" rel="stylesheet" />
   </head>
   <body>
     <main class="container">
       <div id="app"></div>
     </main>
-    <script src="./src/buildless-app.js" type="module"></script>
+    <script src="./src/client.js" type="module"></script>
     <!-- <script nomodule src="dist/fallback.js"></script> -->
   </body>
 </html>

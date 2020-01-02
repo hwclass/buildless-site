@@ -9,7 +9,7 @@ https://github.com/zeit/micro/blob/master/errors/path-not-existent.md
 ### Add rate limiting to the api
 
 ```js
-const rateLimit = require("my-rate-limit");
+const rateLimit = require('my-rate-limit');
 module.exports = async (req, res) => {
   try {
     await rateLimit(req);
@@ -21,3 +21,7 @@ module.exports = async (req, res) => {
   }
 };
 ```
+
+### Node.js helpers for apis on Zeit Now
+
+https://zeit.co/docs/v2/serverless-functions/supported-languages#node.js-helpers
