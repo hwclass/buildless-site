@@ -15,6 +15,8 @@ const headingIds = {
 };
 
 export default (req, res) => {
+  res.setHeader('Cache-Control', 's-maxage=1440, stale-while-revalidate');
+
   const getTitle = (dom, id) =>
     dom.window.document.getElementById(id).innerHTML;
 
@@ -60,7 +62,6 @@ export default (req, res) => {
 
   https.get(readmeUrl, resp => {
     let data = '';
-
     resp.on('data', chunk => {
       data += chunk;
     });
