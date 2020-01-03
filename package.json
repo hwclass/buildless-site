@@ -1,7 +1,7 @@
 {
   "name": "buildless-site",
   "version": "1.0.0",
-  "description": "A collection of sites and apps built based on ES modules",
+  "description": "A collection of sites, apps built based on & packages, articles and other stuff about ES modules.",
   "repository": "https://github.com/hwclass/buildless-site",
   "main": "index.js",
   "engines": {
