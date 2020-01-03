@@ -15,12 +15,10 @@
   "author": "hwclass",
   "license": "ISC",
   "dependencies": {
-    "@vaadin/router": "^1.6.0",
     "csz": "^1.1.1",
     "htm": "^2.2.1",
     "husky": "^3.1.0",
     "jsdom": "^15.2.1",
-    "lit-element": "^2.2.1",
     "marked": "^0.8.0",
     "preact": "^10.1.1",
     "preact-fetch": "^1.0.0-beta.1",
@@ -50,8 +48,5 @@
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
-  },
-  "vaadin": {
-    "disableUsageStatistics": true
   }
 }
