@@ -5,52 +5,79 @@ import { withFetch } from '/web_modules/preact-fetch.js';
 import Loading from './components/Loading.js';
 import Heading from './components/Heading.js';
 
-function Site({ title, description, url }) {
+function Item({ content, href }) {
   return html`
     <li>
-      <a href=${url}>
-        <strong>${title}: </strong>
-        ${description}
-      </a>
+      <article>
+        <a href=${href} target="_blank">${content}</a>
+      </article>
     </li>
   `;
 }
 
-function SiteList({ data }) {
+function ItemList({ list }) {
+  return html`
+    ${list.map(
+      item =>
+        html`
+          <ul>
+            <${Item} ...${item} />
+          </ul>
+        `
+    )}
+  `;
+}
+
+function Section({ title, list }) {
+  return html`
+    <section>
+      <h2>${title}</h2>
+      <${ItemList} list=${list} />
+    </section>
+  `;
+}
+
+function SectionList({ data }) {
+  console.log(`SectionList : ${{ ...data }}`);
   return html`
     <ul>
-      ${data.map(
-        item =>
+      ${data.sections.map(
+        section =>
           html`
-            <${Site} ...${item} />
+            <li>
+              <${Section} ...${section} />
+            </li>
           `
       )}
     </ul>
   `;
 }
 
-function Sites({ ...data }) {
-  if (!Array.isArray(data.entries)) {
+function Sections({ asyncState, ...entries }) {
+  console.log(entries);
+  if (asyncState !== 'resolved' && !Array.isArray(entries.entries)) {
     return html`
       <${Loading} />
     `;
+  } else {
+    console.log('Array.isArray(data.entries)');
+    return html`
+      <${Heading} content="buildless.site" />
+      <${SectionList} data=${entries.entries} />
+    `;
   }
-
-  return html`
-    <${Heading} content="buildless.site" />
-    <${SiteList} data=${data.entries} />
-  `;
 }
 
 // TIP: Needed to be defined for mapping props with preact-fetch
 function mapDataToProps(data) {
+  console.log(`mapDataToProps : ${{ ...data }}`);
   return {
     entries: data
   };
 }
 
-const url = '/api';
-const Client = withFetch(url, { mapDataToProps })(Sites);
+const url = '/api/contents';
+const Client = withFetch(url, { mapDataToProps })(Sections);
 
 render(
   html`

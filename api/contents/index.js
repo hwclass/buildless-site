@@ -15,7 +15,8 @@ const headingIds = {
 };
 
 export default (req, res) => {
-  res.setHeader('Cache-Control', 's-maxage=1440, stale-while-revalidate');
+  // res.setHeader('Cache-Control', 's-maxage=1440, stale-while-revalidate');
+  res.setHeader('Cache-Control', 's-maxage=1440, stale-while-revalidate=3');
 
   const getTitle = (dom, id) =>
     dom.window.document.getElementById(id).innerHTML;
@@ -52,12 +53,12 @@ export default (req, res) => {
     const platforms = getSection(headingIds.platforms, dom);
     const libraries = getSection(headingIds.libraries, dom);
 
-    return {
-      articles,
-      tutorials,
-      platforms,
-      libraries
-    };
+    return [
+      { ...articles },
+      { ...tutorials },
+      { ...platforms },
+      { ...libraries }
+    ];
   };
 
   https.get(readmeUrl, resp => {
