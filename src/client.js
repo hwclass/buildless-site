@@ -16,12 +16,6 @@ function Item({ content, href }) {
 }
 
 function ItemList({ list }) {
-  if (!Array.isArray(list)) {
-    return html`
-      <${Loading} />
-    `;
-  }
-
   return html`
     ${list.map(
       item =>
