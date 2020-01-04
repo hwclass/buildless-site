@@ -16,6 +16,12 @@ function Item({ content, href }) {
 }
 
 function ItemList({ list }) {
+  if (!Array.isArray(list)) {
+    return html`
+      <${Loading} />
+    `;
+  }
+
   return html`
     ${list.map(
       item =>
@@ -38,7 +44,6 @@ function Section({ title, list }) {
 }
 
 function SectionList({ data }) {
-  console.log(`SectionList : ${{ ...data }}`);
   return html`
     <ul>
       ${data.sections.map(
@@ -54,13 +59,11 @@ function SectionList({ data }) {
 }
 
 function Sections({ asyncState, ...entries }) {
-  console.log(entries);
   if (asyncState !== 'resolved' && !Array.isArray(entries.entries)) {
     return html`
       <${Loading} />
     `;
   } else {
-    console.log('Array.isArray(data.entries)');
     return html`
       <${Heading} content="buildless.site" />
       <${SectionList} data=${entries.entries} />
@@ -70,7 +73,6 @@ function Sections({ asyncState, ...entries }) {
 
 // TIP: Needed to be defined for mapping props with preact-fetch
 function mapDataToProps(data) {
-  console.log(`mapDataToProps : ${{ ...data }}`);
   return {
     entries: data
   };
