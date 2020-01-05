@@ -53,3 +53,9 @@ curl https://raw.githubusercontent.com/hwclass/awesome-buildless/master/README.m
 ```sh
 npm install -g npm@latest
 ```
+
+### Add rel="noopener" or rel="noreferrer" into a tags with target="\_blank" to prevent sec.
+
+```html
+<a href="..." target="_blank" rel="noopener" />
+```
