@@ -59,3 +59,9 @@ npm install -g npm@latest
 ```html
 <a href="..." target="_blank" rel="noopener" />
 ```
+
+### It is recommended to use the following header with zeit now to keep the content in sync with the remote resource while/after serving from the edge cache:
+
+```sh
+Cache-Control: s-maxage=1, stale-while-revalidate
+```

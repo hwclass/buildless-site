@@ -15,8 +15,7 @@ const headingIds = {
 };
 
 export default (req, res) => {
-  // res.setHeader('Cache-Control', 's-maxage=1440, stale-while-revalidate');
-  res.setHeader('Cache-Control', 's-maxage=1440, stale-while-revalidate=3');
+  res.setHeader('Cache-Control', 's-maxage=1, stale-while-revalidate');
 
   const getTitle = (dom, id) =>
     dom.window.document.getElementById(id).innerHTML;
