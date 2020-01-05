@@ -4,7 +4,7 @@ function Item({ content, href }) {
   return html`
     <li>
       <article>
-        <a href=${href} target="_blank">${content}</a>
+        <a href=${href} target="_blank" rel="noopener">${content}</a>
       </article>
     </li>
   `;
