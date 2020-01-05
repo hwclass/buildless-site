@@ -12,7 +12,7 @@ function mapDataToProps(data) {
   };
 }
 
-const url = '/api/contents';
+const url = '/api/sections';
 const Client = withFetch(url, { mapDataToProps })(Sections);
 
 render(

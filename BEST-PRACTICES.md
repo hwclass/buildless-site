@@ -48,5 +48,8 @@ curl https://raw.githubusercontent.com/hwclass/awesome-buildless/master/README.m
 
 ### [HTMLCollection](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCollection) object collection is only iterable after applying _Array.from_
 
-```js
+### Update npm to the latest version
+
+```sh
+npm install -g npm@latest
 ```
