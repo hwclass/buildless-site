@@ -1,16 +1,8 @@
-<h1 align="center">Welcome to ![buildless.site](https://i.ibb.co/8XXyjN5/Group-1.png) 👋</h1>
-<p>
-  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
-  <img src="https://img.shields.io/badge/node-12.x-blue.svg" />
-  <a href="#" target="_blank">
-    <img alt="License: ISC" src="https://img.shields.io/badge/License-ISC-yellow.svg" />
-  </a>
-  <a href="https://twitter.com/hwclass" target="_blank">
-    <img alt="Twitter: hwclass" src="https://img.shields.io/twitter/follow/hwclass.svg?style=social" />
-  </a>
-</p>
+# Welcome to ![buildless.site](https://i.ibb.co/8XXyjN5/Group-1.png) 👋
 
-> A collection of sites, apps built based on & packages, articles and other stuff about ES modules.
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000) ![](https://img.shields.io/badge/node-12.x-blue.svg) [ ![License: ISC](https://img.shields.io/badge/License-ISC-yellow.svg) ](#) [![Twitter: hwclass](https://img.shields.io/twitter/follow/hwclass.svg?style=social)](https://twitter.com/hwclass)
+
+A collection of sites, apps built based on & packages, articles and other stuff about ES modules.
 
 ### 🏠 [Homepage](https://buildless.site)
 
