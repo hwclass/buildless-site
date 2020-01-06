@@ -1,7 +1,7 @@
 {
   "name": "buildless-site",
   "version": "1.0.0",
-  "description": "A collection of sites and apps built based on ES modules",
+  "description": "A collection of sites, apps built based on & packages, articles and other stuff about ES modules.",
   "repository": "https://github.com/hwclass/buildless-site",
   "main": "index.js",
   "engines": {
@@ -9,18 +9,17 @@
   },
   "scripts": {
     "dev": "now dev",
-    "postinstall": "node_modules/.bin/pika-web install",
-    "now-build": "node_modules/.bin/pika-web install"
+    "postinstall": "node_modules/.bin/pika-web install"
   },
   "keywords": [],
   "author": "hwclass",
   "license": "ISC",
   "dependencies": {
-    "@vaadin/router": "^1.6.0",
     "csz": "^1.1.1",
     "htm": "^2.2.1",
     "husky": "^3.1.0",
-    "lit-element": "^2.2.1",
+    "jsdom": "^15.2.1",
+    "marked": "^0.8.0",
     "preact": "^10.1.1",
     "preact-fetch": "^1.0.0-beta.1",
     "pretty-quick": "^2.0.1"
@@ -49,8 +48,5 @@
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
-  },
-  "vaadin": {
-    "disableUsageStatistics": true
   }
 }

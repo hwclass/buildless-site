@@ -19,7 +19,7 @@
       "use": "@now/static"
     },
     {
-      "src": "api/*",
+      "src": "api/sections/*",
       "use": "@now/node"
     },
     {
