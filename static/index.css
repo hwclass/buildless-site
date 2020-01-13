@@ -3,6 +3,8 @@
     Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --padding: 15px;
+  --font-family-space-mono: 'Space Mono', monospace;
+  --font-family-space-mono-bold: 'Space Mono Bold', monospace;
 }
 
 html {

@@ -2,7 +2,8 @@ import { render } from '/web_modules/preact.js';
 import { html } from '/web_modules/htm/preact.js';
 import { withFetch } from '/web_modules/preact-fetch.js';
 
-import Heading from './components/Heading.js';
+import Header from './components/Header.js';
+import Hero from './components/Hero.js';
 import Sections from './components/Sections.js';
 
 // TIP: Needed to be defined for mapping props with preact-fetch
@@ -17,7 +18,8 @@ const Client = withFetch(url, { mapDataToProps })(Sections);
 
 render(
   html`
-    <${Heading} content="buildless.site" />
+    <${Header} title="buildless.site" />
+    <${Hero} />
     <${Client} />
   `,
   document.querySelector('#app')
