@@ -1,10 +1,22 @@
 :root {
+  /* Colors */
+  --color-green: #2ecc40;
+
+  /* Typography */
   --font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --padding: 15px;
   --font-family-space-mono: 'Space Mono', monospace;
-  --font-family-space-mono-bold: 'Space Mono Bold', monospace;
+  --font-family-space-mono-bold: 'Space Mono Bold', monospace; /*Replace with Inter*/
+  --font-family-inter-regular: var(--font-family-sans-serif);
+  --font-family-inter-bold: var(--font-family-sans-serif);
+
+  /* Spaces / Paddings / Margins */
+  --padding: 15px;
+  --default-letter-spacing: 5%;
+  --letter-spacing: calc(
+    var(--default-letter-spacing) * 16
+  ); /* em calculation */
 }
 
 html {
@@ -15,19 +27,19 @@ html {
 }
 
 body {
-  margin: 0;
   font-family: var(--font-family-sans-serif);
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  margin: 0;
 }
 
 .container {
-  width: calc(100% - 2 * var(--padding));
+  margin-left: auto;
+  margin-right: auto;
   padding-right: var(--padding);
   padding-left: var(--padding);
-  margin-right: auto;
-  margin-left: auto;
+  width: calc(100% - 2 * var(--padding));
 }
 
 @media (min-width: 576px) {

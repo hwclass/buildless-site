@@ -8,11 +8,13 @@ const buttonCss = css`
   color: #ffffff;
   cursor: pointer;
   display: inline-block;
-  font-size: 26px;
-  font-family: var(--font-family-space-mono-bold);
+  font-size: 20px;
+  font-family: var(--font-family-inter-bold);
+  letter-spacing: var(--letter-spacing);
   line-height: var(--body-line);
-  padding: var(--pico) var(--milli);
+  padding: 20px 45px;
   text-decoration: none;
+  text-transform: uppercase;
   width: auto;
 `;
 
