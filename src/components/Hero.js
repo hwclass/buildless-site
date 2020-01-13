@@ -19,21 +19,12 @@ const heroCss = css`
   flex-direction: column;
 `;
 
-const quoteContentCss = css(
-  url,
-  `
-  content: '${url}'
-`
-);
-
 const Hero = () => html`
   <section class=${heroCss}>
     ${quotes.map(
       quote =>
         html`
-          <h2 class=${quoteContentCss()}>
-            // TODO: Inject js variable inside CSS !!! ${quote.content}
-          </h2>
+          <h2 class=${css`&:before { content: '${quote.content}' }`} />
           <a href=${quote.origin.url} target="_blank">
             ${quote.origin.text}
           </a>
