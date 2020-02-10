@@ -7,7 +7,7 @@ const titleCss = css`
     margin-right: 9px;
   }
   font-size: 26px;
-  font-family: var(--font-family-space-mono-bold);
+  font-family: var(--font-family-space-mono);
   letter-spacing: 0;
   margin: 0;
 `;

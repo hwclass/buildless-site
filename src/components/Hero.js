@@ -6,8 +6,9 @@ import Button from './Button.js';
 const quotes = [
   {
     content: {
-      heading: 'Buildless is a paradigm',
-      remaining:
+      buildless: 'buildless',
+      heading: ' is a paradigm',
+      subheading:
         'which production projects are created without using a build process (like a bundler).'
     },
     origin: {
@@ -73,9 +74,35 @@ const Hero = () => html`
     ${quotes.map(
       quote =>
         html`
-          <h2>
-            <span class=${headingCss}>${quote.content.heading}</span>
-            <span class=${remainingCss}>${quote.content.remaining}</span>
+          <h2
+            class=${css`
+              align-content: center;
+              align-self: flex-start;
+              font-family: var(--font-family-sans-serif);
+              font-weight: normal;
+              font-size: 48px;
+              text-align: center;
+            `}
+          >
+            <span
+              class=${css`
+                font-family: var(--font-family-space-mono);
+                font-weight: bold;
+              `}
+            >
+              ${quote.content.buildless}
+            </span>
+
+            ${quote.content.heading}
+
+            <small
+              class=${css`
+                font-size: 26px;
+                display: block;
+              `}
+            >
+              ${quote.content.subheading}
+            </small>
           </h2>
           <a href=${quote.origin.url} target="_blank" class=${quoteOriginCss}>
             ${quote.origin.text}
