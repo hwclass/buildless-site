@@ -65,6 +65,7 @@ const Hero = () => html`
         `
     )}
     <${Button} caption="Manifesto" />
+    <${Button} caption="Boilerplate" />
   </section>
 `;
 
