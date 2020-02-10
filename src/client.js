@@ -22,5 +22,5 @@ render(
     <${Hero} />
     <${Client} />
   `,
-  document.querySelector('#app')
+  document.querySelector('main')
 );

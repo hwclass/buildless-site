@@ -8,10 +8,10 @@ const quotes = [
     content: {
       heading: 'Buildless is a paradigm',
       remaining:
-        'production projects are created without using a build process (like a bundler).'
+        'which production projects are created without using a build process (like a bundler).'
     },
     origin: {
-      url: 'https://css-tricks.com',
+      url: 'https://css-tricks.com/going-buildless/',
       text: 'css-tricks.com'
     }
   }
@@ -23,11 +23,33 @@ const heroCss = css`
   flex-direction: column;
   flex-grow: 0;
   flex-wrap: wrap;
-  padding: 60px 90px;
+  padding: 0 @media (min-width: 576px) {
+    & {
+      padding: 60px 90px;
+    }
+  }
+`;
+
+const headingCss = css`
+  display: block;
+  font-family: var(--font-family-space-mono);
+  font-size: 48px;
+  padding: 0;
+  text-align: center;
+`;
+
+const remainingCss = css`
+  align-content: center;
+  align-self: flex-start;
+  display: inline-block;
+  font-family: var(--font-family-inter-regular);
+  font-size: 26px;
+  font-weight: normal;
+  text-align: center;
 `;
 
 const quoteOriginCss = css`
-  align-self: flex-end;
+  align-self: center;
   color: var(--color-green);
   display: flex;
   font-family: var(--font-family-inter-regular);
@@ -35,37 +57,36 @@ const quoteOriginCss = css`
   letter-spacing: var(--link-letter-spacing);
 `;
 
+const buttonsWrapper = css`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 50px;
+`;
+
+const spacer = css`
+  flex-grow: 0.1;
+`;
+
 const Hero = () => html`
   <section class=${heroCss}>
     ${quotes.map(
       quote =>
         html`
-          <h2
-            class=${css`
-              &:before {
-                content: '${quote.content.heading}';
-                display: block;
-                font-family: var(--font-family-space-mono);
-                font-size: 48px;
-                text-align: center;
-              };
-
-              align-content: center;
-              align-self: flex-start;
-              font-family: var(--font-family-inter-regular);
-              font-size: 26px;
-              text-align: center;
-          `}
-          >
-            ${quote.content.remaining}
+          <h2>
+            <span class=${headingCss}>${quote.content.heading}</span>
+            <span class=${remainingCss}>${quote.content.remaining}</span>
           </h2>
           <a href=${quote.origin.url} target="_blank" class=${quoteOriginCss}>
             ${quote.origin.text}
           </a>
         `
     )}
-    <${Button} caption="Manifesto" />
-    <${Button} caption="Boilerplate" />
+    <article class=${buttonsWrapper}>
+      <${Button} caption="Manifesto" />
+      <p class=${spacer}></p>
+      <${Button} caption="Boilerplate" />
+    </article>
   </section>
 `;
 

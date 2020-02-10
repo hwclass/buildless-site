@@ -7,7 +7,6 @@ const buttonCss = css`
   border-radius: 5px;
   color: #ffffff;
   cursor: pointer;
-  display: inline-block;
   font-size: 20px;
   font-family: var(--font-family-inter-bold);
   letter-spacing: var(--letter-spacing);

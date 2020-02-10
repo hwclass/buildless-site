@@ -1,5 +1,5 @@
 {
-  "name": "buildless-site",
+  "scope": "bogomiller",
   "builds": [
     {
       "src": "static/*",

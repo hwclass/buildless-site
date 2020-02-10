@@ -24,6 +24,8 @@ html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -32,13 +34,14 @@ body {
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
+  padding: 0;
 }
 
 .container {
   margin-left: auto;
   margin-right: auto;
-  padding-right: var(--padding);
-  padding-left: var(--padding);
+  padding-right: 0;
+  padding-left: 0;
   width: calc(100% - 2 * var(--padding));
 }
 
