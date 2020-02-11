@@ -33,17 +33,21 @@ const heroCss = css`
 
 const headingCss = css`
   display: block;
-  font-family: var(--font-family-space-mono);
+  font-family: var(--font-family-inter-regular);
   font-size: 48px;
   padding: 0;
   text-align: center;
 `;
 
-const remainingCss = css`
+const headingMonoCss = css`
+  font-family: var(--font-family-space-mono);
+  font-weight: bold;
+`;
+
+const subheadingCss = css`
   align-content: center;
   align-self: flex-start;
   display: inline-block;
-  font-family: var(--font-family-inter-regular);
   font-size: 26px;
   font-weight: normal;
   text-align: center;
@@ -72,42 +76,22 @@ const spacer = css`
 const Hero = () => html`
   <section class=${heroCss}>
     ${quotes.map(
-      quote =>
-        html`
-          <h2
-            class=${css`
-              align-content: center;
-              align-self: flex-start;
-              font-family: var(--font-family-sans-serif);
-              font-weight: normal;
-              font-size: 48px;
-              text-align: center;
-            `}
-          >
-            <span
-              class=${css`
-                font-family: var(--font-family-space-mono);
-                font-weight: bold;
-              `}
-            >
-              ${quote.content.buildless}
-            </span>
+      quote => html`
+        <h2 class=${headingCss}>
+          <span class=${headingMonoCss}>
+            ${quote.content.buildless}
+          </span>
 
-            ${quote.content.heading}
+          ${quote.content.heading}
 
-            <small
-              class=${css`
-                font-size: 26px;
-                display: block;
-              `}
-            >
-              ${quote.content.subheading}
-            </small>
-          </h2>
-          <a href=${quote.origin.url} target="_blank" class=${quoteOriginCss}>
-            ${quote.origin.text}
-          </a>
-        `
+          <small class=${subheadingCss}>
+            ${quote.content.subheading}
+          </small>
+        </h2>
+        <a href=${quote.origin.url} target="_blank" class=${quoteOriginCss}>
+          ${quote.origin.text}
+        </a>
+      `
     )}
     <article class=${buttonsWrapper}>
       <${Button} caption="Manifesto" />
