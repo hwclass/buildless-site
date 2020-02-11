@@ -3,6 +3,13 @@ import css from '/web_modules/csz.js';
 
 import ItemList from './ItemList.js';
 
+const itemListCss = css`
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+`;
+
 function Section({ title, list }) {
   return html`
     <section>
@@ -28,7 +35,9 @@ function Section({ title, list }) {
       >
         ${title}
       </h2>
-      <${ItemList} list=${list} />
+      <ul class=${itemListCss}>
+        <${ItemList} list=${list} />
+      </ul>
     </section>
   `;
 }
