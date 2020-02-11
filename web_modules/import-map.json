@@ -1,8 +1,8 @@
 {
   "imports": {
-    "htm/preact": "./htm/preact.js",
-    "preact": "./preact.js",
-    "preact-fetch": "./preact-fetch.js",
-    "csz": "./csz.js"
+    "htm/preact": "./htm/preact.js?rev=99dd70595c",
+    "preact": "./preact.js?rev=5f00e5bb59",
+    "preact-fetch": "./preact-fetch.js?rev=be3a145815",
+    "csz": "./csz.js?rev=819114fe66"
   }
 }

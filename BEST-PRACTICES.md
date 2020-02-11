@@ -65,3 +65,11 @@ npm install -g npm@latest
 ```sh
 Cache-Control: s-maxage=1, stale-while-revalidate
 ```
+
+### Better waiting to get Inter font introduced to Google Fonts [PR](https://github.com/rsms/inter/commit/5a5be63d6e59d5c437b270a5522b370ba845bf39#diff-61e0bdf7e1b43c5c93d9488b22e04170).
+
+### Spacer between spaced-evenly elements in css grid:
+
+```
+flex-grow: 0.1;
+```

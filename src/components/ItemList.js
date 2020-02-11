@@ -7,9 +7,7 @@ function ItemList({ list }) {
     ${list.map(
       item =>
         html`
-          <ul>
-            <${Item} ...${item} />
-          </ul>
+          <${Item} ...${item} />
         `
     )}
   `;

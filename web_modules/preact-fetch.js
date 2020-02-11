@@ -1,4 +1,4 @@
-import { Component as d, createElement as h } from './preact.js';
+import { Component as y, createElement as v } from './preact.js';
 
 function _defineProperty(obj, key, value) {
   if (key in obj) {
@@ -78,7 +78,7 @@ function _objectWithoutProperties(source, excluded) {
   return target;
 }
 
-class FetchProvider extends d {
+class FetchProvider extends y {
   getChildContext() {
     // eslint-disable-next-line no-unused-vars
     let _this$props = this.props,
@@ -127,7 +127,7 @@ function withAsyncState({
         break;
     }
 
-    return h(RenderComponent, props);
+    return v(RenderComponent, props);
   };
 }
 
@@ -149,7 +149,7 @@ function withFetch(url, options = {}) {
         fetchOptions = _objectWithoutProperties(_useCache$options, ["useCache", "mapDataToProps", "mapContextToProps"]);
 
   return WrappedComponent => {
-    return class AsyncResolve extends d {
+    return class AsyncResolve extends y {
       constructor(_props) {
         super(_props);
 
@@ -225,7 +225,7 @@ function withFetch(url, options = {}) {
         data,
         state: asyncState
       }) {
-        return h(WrappedComponent, _objectSpread({
+        return v(WrappedComponent, _objectSpread({
           asyncState
         }, data, props));
       }
