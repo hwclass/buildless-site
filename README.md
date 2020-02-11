@@ -69,7 +69,7 @@ npm run dev
 
 ## Tech Stack
 
-- [@pika/web](https://www.npmjs.com/package/@pika/web)
+- [snowpack](https://www.snowpack.dev/)
 - [preact](https://preactjs.com/)
 - [preact-fetch](https://www.pika.dev/npm/preact-fetch)
 - [htm](https://github.com/developit/htm)
