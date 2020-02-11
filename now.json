@@ -1,5 +1,4 @@
 {
-  "scope": "bogomiller",
   "builds": [
     {
       "src": "static/*",
