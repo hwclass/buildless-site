@@ -8,6 +8,8 @@
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --font-family-space-mono: 'Space Mono', monospace;
   --font-family-space-mono-bold: 'Space Mono Bold', monospace;
+  --font-family-inter-regular: var(--font-family-sans-serif);
+  --font-family-inter-bold: var(--font-family-sans-serif);
 
   /* Spaces / Paddings / Margins */
   --padding: 15px;
