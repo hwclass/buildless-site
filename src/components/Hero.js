@@ -6,7 +6,7 @@ import Button from './Button.js';
 const quotes = [
   {
     content: {
-      buildless: 'buildless',
+      buildless: '"Buildless"',
       heading: ' is a paradigm',
       subheading:
         'which production projects are created without using a build process (like a bundler).'

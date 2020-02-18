@@ -9,10 +9,14 @@
   --font-family-space-mono: 'Space Mono', monospace;
   --font-family-space-mono-bold: 'Space Mono Bold', monospace;
   --font-family-inter-regular: var(--font-family-sans-serif);
+  --font-family-inter-semi-bold: var(--font-family-sans-serif);
   --font-family-inter-bold: var(--font-family-sans-serif);
+  --font-size-default: 20px;
+  --font-size-medium: 24px;
 
   /* Spaces / Paddings / Margins */
   --padding: 15px;
+  --margin: 10px;
   --default-letter-spacing: 5%;
   --letter-spacing: calc(
     var(--default-letter-spacing) * 16
