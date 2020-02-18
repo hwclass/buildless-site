@@ -35,6 +35,7 @@ const headingCss = css`
   display: block;
   font-family: var(--font-family-inter-regular);
   font-size: 48px;
+  margin-bottom: 0;
   padding: 0;
   text-align: center;
 `;

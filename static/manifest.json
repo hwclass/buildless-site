@@ -1,7 +1,7 @@
 {
   "short_name": "buildless.site",
   "name": "buildless.site",
-  "description": "A collection of sites, apps built based on & packages, articles and other stuff about ES modules",
+  "description": "A collection of sites, apps, packages, articles and other stuff about ES modules.",
   "icons": [
     {
       "src": "/static/favicon-512x512.png",

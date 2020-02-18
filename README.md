@@ -2,7 +2,7 @@
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000) ![](https://img.shields.io/badge/node-12.x-blue.svg) [ ![License: ISC](https://img.shields.io/badge/License-ISC-yellow.svg) ](#) [![Twitter: hwclass](https://img.shields.io/twitter/follow/hwclass.svg?style=social)](https://twitter.com/hwclass)
 
-A collection of sites, apps built based on & packages, articles and other stuff about ES modules.
+A collection of sites, apps, packages, articles and other stuff about ES modules.
 
 ### 🏠 [Homepage](https://buildless.site)
 
