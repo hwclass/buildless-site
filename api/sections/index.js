@@ -1,7 +1,6 @@
 const https = require('https');
 const marked = require('marked');
 const jsdom = require('jsdom');
-const replace = require('buffer-replace');
 
 const { JSDOM } = jsdom;
 
