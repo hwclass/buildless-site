@@ -6,7 +6,7 @@ import Button from './Button.js';
 const quotes = [
   {
     content: {
-      buildless: 'buildless',
+      buildless: '"Buildless"',
       heading: ' is a paradigm',
       subheading:
         'which production projects are created without using a build process (like a bundler).'
@@ -35,6 +35,7 @@ const headingCss = css`
   display: block;
   font-family: var(--font-family-inter-regular);
   font-size: 48px;
+  margin-bottom: 0;
   padding: 0;
   text-align: center;
 `;

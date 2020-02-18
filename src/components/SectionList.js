@@ -8,12 +8,17 @@ function SectionList({ data }) {
     <ul
       class=${css`
         list-style: none;
+        padding: 105px 0;
       `}
     >
       ${data.map(
         section =>
           html`
-            <li>
+            <li
+              class=${css`
+                margin-top: 50px;
+              `}
+            >
               <${Section} ...${section} />
             </li>
           `

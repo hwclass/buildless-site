@@ -4,6 +4,7 @@ import css from '/web_modules/csz.js';
 const itemCss = css`
   color: #111111;
   font-size: 30px;
+  line-height: 80px;
 `;
 
 function Item({ content, href }) {
