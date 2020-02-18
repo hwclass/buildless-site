@@ -1,6 +1,7 @@
 const https = require('https');
 const marked = require('marked');
 const jsdom = require('jsdom');
+const replace = require('buffer-replace');
 
 const { JSDOM } = jsdom;
 
@@ -17,8 +18,11 @@ const headingIds = {
 export default (req, res) => {
   res.setHeader('Cache-Control', 's-maxage=1, stale-while-revalidate');
 
-  const getTitle = (dom, id) =>
-    dom.window.document.getElementById(id).innerHTML;
+  const getTitle = (dom, id) => {
+    let title = dom.window.document.getElementById(id).innerHTML;
+    title = title.replace(/&amp;/g, '&');
+    return title;
+  };
 
   const getList = (dom, id) => {
     const links = [];
@@ -37,14 +41,10 @@ export default (req, res) => {
     return links;
   };
 
-  const getSection = (id, dom) => {
-    const articlesTitle = getTitle(dom, id);
-    const articleList = getList(dom, id);
-    return {
-      title: articlesTitle,
-      list: articleList
-    };
-  };
+  const getSection = (id, dom) => ({
+    title: getTitle(dom, id),
+    list: getList(dom, id)
+  });
 
   const getSections = dom => {
     const articles = getSection(headingIds.articles, dom);
