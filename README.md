@@ -23,6 +23,10 @@ npm install
 npm run dev
 ```
 
+## Component Dependency Graph
+
+![](./dependencygraph.svg)
+
 ## API
 
 ### Fetch sections
