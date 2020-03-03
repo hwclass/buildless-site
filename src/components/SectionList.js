@@ -8,7 +8,7 @@ function SectionList({ data }) {
     <ul
       class=${css`
         list-style: none;
-        padding: 105px 0;
+        padding: 0;
       `}
     >
       ${data.map(

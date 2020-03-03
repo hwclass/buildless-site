@@ -2,6 +2,7 @@ import { html } from '/web_modules/htm/preact.js';
 import css from '/web_modules/csz.js';
 
 import Button from './Button.js';
+import Link from './Link.js';
 
 const quotes = [
   {
@@ -97,7 +98,7 @@ const Hero = () => html`
     <article class=${buttonsWrapper}>
       <${Button} caption="Manifesto" />
       <p class=${spacer}></p>
-      <${Button} caption="Boilerplate" />
+      <${Link} caption="Boilerplate" />
     </article>
   </section>
 `;
