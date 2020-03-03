@@ -1,7 +1,10 @@
 import { html } from '/web_modules/htm/preact.js';
 
 const EmbedCode = () => html`
-  <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+  <div
+    class="glitch-embed-wrap"
+    style="height: 420px; width: 100%; padding: 105px 0;"
+  >
     <iframe
       src="https://glitch.com/embed/#!/embed/buildless-boilerplate?path=src/components/FilmList.js&previewSize=0&sidebarCollapsed=true&attributionHidden=true"
       title="buildless-boilerplate on Glitch"
