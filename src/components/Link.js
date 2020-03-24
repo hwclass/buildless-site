@@ -9,6 +9,7 @@ const linkCss = css`
   cursor: pointer;
   font-size: 20px;
   font-family: var(--font-family-inter-bold);
+  font-weight: bold;
   letter-spacing: var(--letter-spacing);
   line-height: var(--body-line);
   padding: 20px 45px;

@@ -11,7 +11,8 @@ const headingIds = {
   articles: 'articles',
   tutorials: 'tutorials',
   platforms: 'tools--platforms',
-  libraries: 'packages--libraries'
+  libraries: 'packages--libraries',
+  videos: 'videos'
 };
 
 export default (req, res) => {
@@ -50,12 +51,14 @@ export default (req, res) => {
     const tutorials = getSection(headingIds.tutorials, dom);
     const platforms = getSection(headingIds.platforms, dom);
     const libraries = getSection(headingIds.libraries, dom);
+    const videos = getSection(headingIds.videos, dom);
 
     return [
       { ...articles },
       { ...tutorials },
       { ...platforms },
-      { ...libraries }
+      { ...libraries },
+      { ...videos }
     ];
   };
 
