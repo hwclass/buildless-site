@@ -96,9 +96,9 @@ const Hero = () => html`
       `
     )}
     <article class=${buttonsWrapper}>
-      <${Button} caption="Manifesto" />
+      <${Link} href="#manifesto" target="_self" caption="Manifesto" />
       <p class=${spacer}></p>
-      <${Link} caption="Boilerplate" />
+      <${Link} caption="Get Started" />
     </article>
   </section>
 `;
