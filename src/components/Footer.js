@@ -102,7 +102,8 @@ const Footer = () => html`
         )} 
       </ul>
     </p>
-    <p class=${noSpace}>made with ❤ by <a href="https://www.github.com/hwclass">hwclass</a> & <a href="https://www.github.com/Kjaer">kjaer</a> without using a bundler.</p>
+    <p class=${noSpace}>Feel free to contribute with links to <a href="https://www.github.com/hwclass/awesome-buildless" target="_blank">awesome-buildless</a>.</p>
+    <p class=${noSpace}>Made with ❤ by <a href="https://www.github.com/hwclass" target="_blank">hwclass</a> & <a href="https://www.github.com/Kjaer" target="_blank">kjaer</a> without using a bundler.</p>
   </footer>
 `;
 
