@@ -5,6 +5,7 @@ import { withFetch } from '/web_modules/preact-fetch.js';
 import Header from './components/Header.js';
 import Hero from './components/Hero.js';
 import EmbedCode from './components/EmbedCode.js';
+import Boilerplates from './components/Boilerplates.js';
 import Sections from './components/Sections.js';
 import Footer from './components/Footer.js';
 
@@ -23,6 +24,7 @@ render(
     <${Header} title="buildless.site" />
     <${Hero} />
     <${EmbedCode} />
+    <${Boilerplates} />
     <${Client} />
     <${Footer} />
   `,

@@ -19,8 +19,8 @@ const linkCss = css`
 
 const HREF = 'https://glitch.com/~buildless-boilerplate';
 
-const Link = ({ caption, href = HREF }) => html`
-  <a href=${href} target='_blank' class=${linkCss}>
+const Link = ({ caption, href = HREF, target = '_blank' }) => html`
+  <a href=${href} target=${target} class=${linkCss}>
     ${caption}
   </button>
 `;
