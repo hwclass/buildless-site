@@ -8,7 +8,8 @@ const buttonCss = css`
   color: #ffffff;
   cursor: pointer;
   font-size: 20px;
-  font-family: var(--font-family-inter-bold);
+  font-family: var(--font-family-inter);
+  font-weight: bold;
   letter-spacing: var(--letter-spacing);
   line-height: var(--body-line);
   padding: 20px 45px;

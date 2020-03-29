@@ -12,7 +12,7 @@ function Boilerplates() {
         class=${css`
           &:before {
             content: '≠';
-            font-family: var(--font-family-sans-serif);
+            font-family: var(--font-family-inter);
             font-size: 118px;
             opacity: 0.3;
             position: absolute;
@@ -28,7 +28,7 @@ function Boilerplates() {
           font-size: 36px;
         `}
       >
-        <a href="#boilerplates" class=${headingCss}>Boilerplates</a>
+        <div id="boilerplates" class=${headingCss}>Boilerplates</div>
       </h2>
       <section
         class="glitch-embed-wrap"
@@ -36,7 +36,7 @@ function Boilerplates() {
       >
         <div style="width: 50%;">
           <iframe
-            src="https://glitch.com/embed/#!/embed/react-buildless-boilerplate?path=client.js&previewSize=0&sidebarCollapsed=true"
+            src="https://glitch.com/embed/#!/embed/react-buildless-boilerplate?path=client.js&previewSize=0&sidebarCollapsed=true&attributionHidden=true"
             title="react-buildless-boilerplate on Glitch"
             allow="geolocation; microphone; camera; midi; vr; encrypted-media"
             style="height: 100%; width: 100%; border: 0;"
@@ -45,7 +45,7 @@ function Boilerplates() {
         </div>
         <div style="width: 50%;">
           <iframe
-            src="https://glitch.com/embed/#!/embed/vue-buildless-boilerplate?path=src/components/App.js&previewSize=0&sidebarCollapsed=true"
+            src="https://glitch.com/embed/#!/embed/vue-buildless-boilerplate?path=src/components/App.js&previewSize=0&sidebarCollapsed=true&attributionHidden=true"
             title="vue-buildless-boilerplate on Glitch"
             allow="geolocation; microphone; camera; midi; vr; encrypted-media"
             style="height: 100%; width: 100%; border: 0;"

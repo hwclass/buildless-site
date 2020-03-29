@@ -34,7 +34,7 @@ const heroCss = css`
 
 const headingCss = css`
   display: block;
-  font-family: var(--font-family-inter-regular);
+  font-family: var(--font-family-inter);
   font-size: 48px;
   margin-bottom: 0;
   padding: 0;
@@ -59,7 +59,7 @@ const quoteOriginCss = css`
   align-self: center;
   color: var(--color-green);
   display: flex;
-  font-family: var(--font-family-inter-regular);
+  font-family: var(--font-family-inter);
   font-size: 26px;
   letter-spacing: var(--link-letter-spacing);
 `;
@@ -96,9 +96,9 @@ const Hero = () => html`
       `
     )}
     <article class=${buttonsWrapper}>
-      <${Button} caption="Manifesto" />
+      <${Link} href="#manifesto" target="_self" caption="Manifesto" />
       <p class=${spacer}></p>
-      <${Link} caption="Boilerplate" />
+      <${Link} caption="Get Started" />
     </article>
   </section>
 `;
