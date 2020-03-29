@@ -8,7 +8,7 @@ const linkCss = css`
   color: #ffffff;
   cursor: pointer;
   font-size: 20px;
-  font-family: var(--font-family-inter-bold);
+  font-family: var(--font-family-inter);
   font-weight: bold;
   letter-spacing: var(--letter-spacing);
   line-height: var(--body-line);

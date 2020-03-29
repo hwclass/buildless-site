@@ -7,7 +7,7 @@ const footerCss = css`
   color: #ffffff;
   cursor: pointer;
   font-size: 14px;
-  font-family: var(--font-family-inter-regular);
+  font-family: var(--font-family-inter);
   letter-spacing: var(--letter-spacing);
   line-height: var(--body-line);
   padding: 20px 20px;

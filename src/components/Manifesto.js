@@ -4,13 +4,13 @@ import css from '/web_modules/csz.js';
 const principlesCss = css`
   margin: auto 0;
   display: block;
-  font-family: var(--font-family-sans-serif);
+  font-family: var(--font-family-inter);
   list-style: none;
   padding: 0;
 `;
 
 const princpleItemCss = css`
-  font-family: var(--font-family-sans-serif);
+  font-family: var(--font-family-inter);
   font-size: 18px;
   padding: 0 0 10px;
 `;
@@ -41,7 +41,7 @@ const Manifesto = ({ title = 'Manifesto' }) => html`
       class=${css`
         &:before {
           content: '≠';
-          font-family: var(--font-family-sans-serif);
+          font-family: var(--font-family-inter);
           font-size: 118px;
           opacity: 0.3;
           position: absolute;

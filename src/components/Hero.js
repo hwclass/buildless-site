@@ -34,7 +34,7 @@ const heroCss = css`
 
 const headingCss = css`
   display: block;
-  font-family: var(--font-family-inter-regular);
+  font-family: var(--font-family-inter);
   font-size: 48px;
   margin-bottom: 0;
   padding: 0;
@@ -59,7 +59,7 @@ const quoteOriginCss = css`
   align-self: center;
   color: var(--color-green);
   display: flex;
-  font-family: var(--font-family-inter-regular);
+  font-family: var(--font-family-inter);
   font-size: 26px;
   letter-spacing: var(--link-letter-spacing);
 `;

@@ -12,7 +12,7 @@ function Boilerplates() {
         class=${css`
           &:before {
             content: '≠';
-            font-family: var(--font-family-sans-serif);
+            font-family: var(--font-family-inter);
             font-size: 118px;
             opacity: 0.3;
             position: absolute;
