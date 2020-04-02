@@ -90,7 +90,12 @@ const Hero = () => html`
             ${quote.content.subheading}
           </small>
         </h2>
-        <a href=${quote.origin.url} target="_blank" class=${quoteOriginCss}>
+        <a
+          href=${quote.origin.url}
+          target="_blank"
+          class=${quoteOriginCss}
+          rel="noopener"
+        >
           ${quote.origin.text}
         </a>
       `

@@ -11,7 +11,7 @@ function Item({ content, href }) {
   return html`
     <li>
       <article>
-        <a href=${href} target="_blank" rel="noopener" class=${itemCss}
+        <a href=${href} target="_blank" class=${itemCss} rel="noopener"
           >${content}</a
         >
       </article>
