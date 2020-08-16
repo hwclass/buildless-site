@@ -1,6 +1,10 @@
 import { html } from '/web_modules/htm/preact.js';
 import css from '/web_modules/csz.js';
 
+const listItemCss = css`
+  text-align: center;
+`;
+
 const itemCss = css`
   color: #111111;
   font-size: 30px;
@@ -9,7 +13,7 @@ const itemCss = css`
 
 function Item({ content, href }) {
   return html`
-    <li>
+    <li class=${listItemCss}>
       <article>
         <a href=${href} target="_blank" class=${itemCss} rel="noopener"
           >${content}</a
