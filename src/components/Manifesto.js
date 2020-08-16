@@ -4,19 +4,22 @@ import css from '/web_modules/csz.js';
 const principlesCss = css`
   margin: auto 0;
   display: block;
-  font-family: var(--font-family-inter);
+  font-family: var(--font-family-space-mono);
   list-style: none;
   padding: 0;
 `;
 
 const princpleItemCss = css`
-  font-family: var(--font-family-inter);
+  background: var(--color-green);
+  color: var(--color-white);
   font-size: 18px;
+  margin-bottom: 10px;
   padding: 0 0 10px;
 `;
 
 const principleTitleCss = css`
-  font-size: 60px;
+  color: var(--color-white);
+  font-size: 36px;
   margin: 0;
   padding: 0 10px;
   &:before {
@@ -26,6 +29,7 @@ const principleTitleCss = css`
 `;
 
 const principleDescriptionCss = css`
+  color: var(--color-black);
   font-size: 22px;
   margin: 0;
   padding: 0 10px;
@@ -62,7 +66,7 @@ const Manifesto = ({ title = 'Manifesto' }) => html`
       </div>
     </h2>
     <ul class=${principlesCss}>
-      <li class=${princpleItemCss + ' bg-yellow'}>
+      <li class=${princpleItemCss}>
         <p class=${principleTitleCss}>Be Aware</p>
         <p class=${principleDescriptionCss}>
           Bundlers used to be existing for making our development experience

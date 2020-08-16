@@ -1,5 +1,7 @@
 :root {
   /* Colors */
+  --color-white: #fff;
+  --color-black: #000;
   --color-green: #0eed82;
 
   /* Typography */

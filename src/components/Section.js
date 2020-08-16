@@ -7,7 +7,7 @@ const itemListCss = css`
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
 `;
 
 function Section({ title, list }) {
