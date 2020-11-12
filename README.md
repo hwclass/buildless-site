@@ -17,11 +17,16 @@ A collection of sites, apps, packages, articles and other stuff about ES modules
 npm install
 ```
 
-## Usage
+## Run
 
 ```sh
-npm run dev
+# run the api
+npm run api
+# run the app
+npm start
 ```
+
+Note: Since everytime when somethinng changes in the code, `npm run build` is triggered via vercel & this also causes another (p)react re-render via `@prefresh/snowpack` which triggers an endless refresh loop. This should be fixed in the other updates.
 
 ## Component Dependency Graph
 
@@ -78,22 +83,23 @@ npm run dev
 - [preact-fetch](https://www.pika.dev/npm/preact-fetch)
 - [htm](https://github.com/developit/htm)
 - [marked](https://www.npmjs.com/package/marked)
+- [svg backgrounds](https://www.svgbackgrounds.com)
 
 ## Authors
 
 👤 **hwclass**
 
-- Website: hwclass.dev
-- Twitter: [@hwclass](https://twitter.com/hwclass)
-- Github: [@hwclass](https://github.com/hwclass)
-- LinkedIn: [@hwclass](https://linkedin.com/in/hwclass)
+- [Web](https://hwclass.dev)
+- [Twitter](https://twitter.com/hwclass)
+- [Github](https://github.com/hwclass)
+- [LinkedIn](https://linkedin.com/in/hwclass)
 
 👤 **Kjaer**
 
-- Website: https://medium.com/@kjaer
-- Twitter: [@halilkayer](https://twitter.com/halilkayer)
-- Github: [@Kjaer](https://github.com/Kjaer)
-- LinkedIn: [@halilkayer](https://linkedin.com/in/halilkayer)
+- [Web](https://medium.com/@kjaer)
+- [Twitter](https://twitter.com/halilkayer)
+- [Github](https://github.com/Kjaer)
+- [LinkedIn](https://linkedin.com/in/halilkayer)
 
 ## Licence
 

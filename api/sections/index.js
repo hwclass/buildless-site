@@ -1,6 +1,15 @@
 const https = require('https');
 const marked = require('marked');
 const jsdom = require('jsdom');
+const Cors = require('cors');
+
+const initMiddleware = require('../../lib/initMiddleware');
+
+const cors = initMiddleware(
+  Cors({
+    methods: ['GET'],
+  }),
+);
 
 const { JSDOM } = jsdom;
 
@@ -13,10 +22,12 @@ const headingIds = {
   platforms: 'tools--platforms',
   libraries: 'packages--libraries',
   videos: 'videos',
-  presentations: 'presentations--talks'
+  presentations: 'presentations--talks',
 };
 
-export default (req, res) => {
+module.exports = async function(req, res) {
+  await cors(req, res);
+
   res.setHeader('Cache-Control', 's-maxage=1, stale-while-revalidate');
 
   const getTitle = (dom, id) => {
@@ -28,13 +39,13 @@ export default (req, res) => {
   const getList = (dom, id) => {
     const links = [];
     const linkCollection = Array.from(
-      dom.window.document.querySelectorAll(`#${id} + ul li`)
+      dom.window.document.querySelectorAll(`#${id} + ul li`),
     ).map(link => link.children);
     for (let item of linkCollection) {
       Array.from(item).map(item => {
         links.push({
           content: item.innerHTML,
-          href: item.href
+          href: item.href,
         });
       });
     }
@@ -44,7 +55,7 @@ export default (req, res) => {
 
   const getSection = (id, dom) => ({
     title: getTitle(dom, id),
-    list: getList(dom, id)
+    list: getList(dom, id),
   });
 
   const getSections = dom => {
@@ -61,7 +72,7 @@ export default (req, res) => {
       { ...platforms },
       { ...libraries },
       { ...videos },
-      { ...presentations }
+      { ...presentations },
     ];
   };
 
@@ -79,7 +90,7 @@ export default (req, res) => {
       const sections = getSections(dom);
 
       const structuredDoc = {
-        sections
+        sections,
       };
 
       res.json(structuredDoc);

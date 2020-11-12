@@ -1,10 +1,10 @@
-import { html } from '/web_modules/htm/preact.js';
-import css from '/web_modules/csz.js';
+import { html } from 'htm/preact';
+import css from 'csz';
 
 const footerCss = css`
   background: #0eed82;
   border: 0;
-  color: #ffffff;
+  color: var(--color-white);
   cursor: pointer;
   font-size: 14px;
   font-family: var(--font-family-inter);
@@ -46,48 +46,48 @@ const linkCss = css`
 const tools = [
   {
     title: 'browserslist',
-    link: 'https://github.com/browserslist/browserslist'
+    link: 'https://github.com/browserslist/browserslist',
   },
   {
     title: 'csz',
-    link: 'https://github.com/lukejacksonn/csz'
+    link: 'https://github.com/lukejacksonn/csz',
   },
   {
     title: 'htm',
-    link: 'https://github.com/developit/htm'
+    link: 'https://github.com/developit/htm',
   },
   {
     title: 'husky',
-    link: 'https://github.com/typicode/husky'
+    link: 'https://github.com/typicode/husky',
   },
   {
     title: 'zeit now',
-    link: 'https://zeit.co/'
+    link: 'https://zeit.co/',
   },
   {
     title: 'snowpack',
-    link: 'https://www.snowpack.dev/'
+    link: 'https://www.snowpack.dev/',
   },
   {
     title: 'preact',
-    link: 'https://preactjs.com/'
+    link: 'https://preactjs.com/',
   },
   {
     title: 'preact-fetch',
-    link: 'https://www.pika.dev/npm/preact-fetch'
+    link: 'https://www.pika.dev/npm/preact-fetch',
   },
   {
     title: 'prettier',
-    link: 'https://prettier.io/'
+    link: 'https://prettier.io/',
   },
   {
     title: 'pretty-quick',
-    link: 'https://www.npmjs.com/package/pretty-quick'
+    link: 'https://www.npmjs.com/package/pretty-quick',
   },
   {
     title: 'svg backgrounds',
-    link: 'https://www.svgbackgrounds.com'
-  }
+    link: 'https://www.svgbackgrounds.com',
+  },
 ];
 
 const Footer = () => html`
@@ -107,7 +107,7 @@ const Footer = () => html`
                 ${tool.title}
               </a>
             </li>
-          `
+          `,
         )} 
       </ul>
     </p>

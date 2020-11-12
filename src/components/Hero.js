@@ -1,5 +1,5 @@
-import { html } from '/web_modules/htm/preact.js';
-import css from '/web_modules/csz.js';
+import { html } from 'htm/preact';
+import css from 'csz';
 
 import Button from './Button.js';
 import Link from './Link.js';
@@ -10,13 +10,13 @@ const quotes = [
       buildless: '"Buildless"',
       heading: ' is a paradigm',
       subheading:
-        'which production projects are created without using a build process (like a bundler).'
+        'which production projects are created without using a build process (like a bundler).',
     },
     origin: {
       url: 'https://css-tricks.com/going-buildless/',
-      text: 'css-tricks.com'
-    }
-  }
+      text: 'css-tricks.com',
+    },
+  },
 ];
 
 const heroCss = css`
@@ -98,7 +98,7 @@ const Hero = () => html`
         >
           ${quote.origin.text}
         </a>
-      `
+      `,
     )}
     <article class=${buttonsWrapper}>
       <${Link} href="#manifesto" target="_self" caption="Manifesto" />
