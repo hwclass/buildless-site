@@ -83,6 +83,10 @@ const tools = [
   {
     title: 'pretty-quick',
     link: 'https://www.npmjs.com/package/pretty-quick'
+  },
+  {
+    title: 'svg backgrounds',
+    link: 'https://www.svgbackgrounds.com'
   }
 ];
 
