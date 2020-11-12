@@ -9,7 +9,6 @@
   },
   "scripts": {
     "snowpack": "snowpack --clean",
-    "dev": "now dev",
     "postinstall": "npm run snowpack"
   },
   "keywords": [],

@@ -7,8 +7,9 @@ const listItemCss = css`
 
 const itemCss = css`
   color: #111111;
-  font-size: 30px;
+  font-size: var(--font-size-large);
   line-height: 80px;
+  padding: 0 var(--margin);
 `;
 
 function Item({ content, href }) {
