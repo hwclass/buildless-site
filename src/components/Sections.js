@@ -1,4 +1,4 @@
-import { html } from '/web_modules/htm/preact.js';
+import { html } from 'htm/preact';
 
 import Loading from './Loading.js';
 import SectionList from './SectionList.js';

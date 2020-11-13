@@ -1,11 +1,11 @@
-import { html } from '/web_modules/htm/preact.js';
-import css from '/web_modules/csz.js';
+import { html } from 'htm/preact';
+import css from 'csz';
 
 const buttonCss = css`
   background: #0eed82;
   border: 0;
   border-radius: 5px;
-  color: #ffffff;
+  color: var(--color-white);
   cursor: pointer;
   font-size: 20px;
   font-family: var(--font-family-inter);

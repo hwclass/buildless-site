@@ -1,4 +1,4 @@
-import { html } from '/web_modules/htm/preact.js';
+import { html } from 'htm/preact';
 
 const EmbedCode = () => html`
   <div

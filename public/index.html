@@ -20,7 +20,7 @@
             },
             err => {
               console.log('ServiceWorker registration failed: ', err);
-            }
+            },
           );
         });
       }
@@ -40,8 +40,8 @@
     />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="icon" href="/static/favicon.ico" type="image/x-icon" />
-    <link rel="manifest" href="/static/manifest.json" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="manifest" href="/manifest.json" />
     <link
       href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap"
       rel="stylesheet"
@@ -54,7 +54,7 @@
       rel="stylesheet"
       href="https://s3-us-west-2.amazonaws.com/colors-css/2.2.0/colors.min.css"
     />
-    <link href="/static/index.css" rel="stylesheet" />
+    <link href="/index.css" rel="stylesheet" />
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=UA-136789855-3"
@@ -70,7 +70,7 @@
   </head>
   <body>
     <main class="container"></main>
-    <script src="./src/client.js" type="module"></script>
+    <script src="/_dist_/client.js" type="module"></script>
     <!-- <script nomodule src="dist/fallback.js"></script> -->
   </body>
 </html>

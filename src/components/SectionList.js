@@ -1,5 +1,5 @@
-import { html } from '/web_modules/htm/preact.js';
-import css from '/web_modules/csz.js';
+import { html } from 'htm/preact';
+import css from 'csz';
 
 import Section from './Section.js';
 
@@ -21,7 +21,7 @@ function SectionList({ data }) {
             >
               <${Section} ...${section} />
             </li>
-          `
+          `,
       )}
     </ul>
   `;

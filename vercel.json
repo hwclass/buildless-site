@@ -1,0 +1,6 @@
+{
+  "redirects": [{ "source": "^/favicon.ico$", "destination": "/favicon.ico" }],
+  "github": {
+    "enabled": true
+  }
+}

@@ -1,4 +1,4 @@
-import { html } from '/web_modules/htm/preact.js';
+import { html } from 'htm/preact';
 
 import Item from './Item.js';
 
@@ -8,7 +8,7 @@ function ItemList({ list }) {
       item =>
         html`
           <${Item} ...${item} />
-        `
+        `,
     )}
   `;
 }

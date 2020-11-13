@@ -1,5 +1,5 @@
-import { html } from '/web_modules/htm/preact.js';
-import css from '/web_modules/csz.js';
+import { html } from 'htm/preact';
+import css from 'csz';
 
 const loadingClassName = css`
   margin: 50px auto 0;
@@ -8,7 +8,7 @@ const loadingClassName = css`
 
 const Loading = () => html`
   <img
-    src="static/hourglass.gif"
+    src="/hourglass.gif"
     width="50"
     height="50"
     alt="loading..."

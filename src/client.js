@@ -1,6 +1,6 @@
-import { render } from '/web_modules/preact.js';
-import { html } from '/web_modules/htm/preact.js';
-import { withFetch } from '/web_modules/preact-fetch.js';
+import { render } from 'preact';
+import { html } from 'htm/preact';
+import { withFetch } from 'preact-fetch';
 
 import Header from './components/Header.js';
 import Hero from './components/Hero.js';
@@ -13,11 +13,11 @@ import Footer from './components/Footer.js';
 // TIP: Needed to be defined for mapping props with preact-fetch
 function mapDataToProps(data) {
   return {
-    entries: data
+    entries: data,
   };
 }
 
-const url = '/api/sections';
+const url = import.meta.env.SNOWPACK_PUBLIC_API_SECTION;
 const Client = withFetch(url, { mapDataToProps })(Sections);
 
 render(
@@ -30,5 +30,5 @@ render(
     <${Client} />
     <${Footer} />
   `,
-  document.querySelector('main')
+  document.querySelector('main'),
 );

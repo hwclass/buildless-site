@@ -1,8 +1,8 @@
-import { html } from '/web_modules/htm/preact.js';
-import css from '/web_modules/csz.js';
+import { html } from 'htm/preact';
+import css from 'csz';
 
 const headingCss = css`
-  color: #fff;
+  color: var(--color-white);
 `;
 
 function Boilerplates() {
