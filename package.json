@@ -10,32 +10,33 @@
   "scripts": {
     "start": "snowpack dev",
     "snowpack:build": "snowpack build",
-    "api": "vercel dev"
+    "snowpack:clear": "snowpack --reload",
+    "api": "vercel dev",
+    "test": "web-test-runner \"src/**/*.test.jsx\""
   },
   "keywords": [],
   "author": "hwclass",
   "license": "ISC",
   "dependencies": {
-    "@snowpack/plugin-dotenv": "^2.0.4",
+    "@snowpack/plugin-dotenv": "^2.0.5",
     "cors": "^2.8.5",
-    "csz": "^1.2.0",
-    "htm": "^3.0.3",
     "husky": "^4.2.1",
     "jsdom": "^16.1.0",
-    "marked": "^0.8.0",
-    "preact": "^10.3.1",
-    "preact-fetch": "^1.0.0-beta.1"
+    "marked": "^0.8.0"
   },
   "devDependencies": {
-    "@prefresh/snowpack": "^2.1.0",
-    "prettier": "^1.19.1",
+    "@prefresh/snowpack": "^3.0.2",
+    "@snowpack/plugin-dotenv": "^2.0.5",
+    "@snowpack/web-test-runner-plugin": "^0.2.0",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/preact": "^2.0.0",
+    "@web/test-runner": "^0.12.0",
+    "chai": "^4.2.0",
+    "prettier": "^2.0.5",
     "pretty-quick": "^3.1.0",
-    "snowpack": "^2.17.1"
+    "snowpack": "^3.0.1"
   },
   "browserslist": ">0.75%, not ie 11, not op_mini all",
-  "optionalDependencies": {
-    "fsevents": "*"
-  },
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"

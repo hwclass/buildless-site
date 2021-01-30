@@ -1,6 +1,6 @@
-import { html } from 'htm/preact';
+import { h } from 'preact';
 
-const EmbedCode = () => html`
+const EmbedCode = () => (
   <div
     class="glitch-embed-wrap"
     style="height: 420px; width: 100%; padding: 105px 0;"
@@ -10,9 +10,8 @@ const EmbedCode = () => html`
       title="buildless-boilerplate on Glitch"
       allow="geolocation; microphone; camera; midi; vr; encrypted-media"
       style="height: 100%; width: 100%; border: 0;"
-    >
-    </iframe>
+    ></iframe>
   </div>
-`;
+);
 
 export default EmbedCode;

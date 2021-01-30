@@ -1,7 +1,7 @@
-import { html } from 'htm/preact';
+import { h } from 'preact';
 import css from 'csz';
 
-const linkCss = css`
+const buttonCss = css`
   background: #0eed82;
   border: 0;
   border-radius: 5px;
@@ -18,12 +18,6 @@ const linkCss = css`
   width: auto;
 `;
 
-const HREF = 'https://glitch.com/~buildless-boilerplate';
+const Button = ({ caption }) => <button class={buttonCss}>{caption}</button>;
 
-const Link = ({ caption, href = HREF, target = '_blank' }) => html`
-  <a href=${href} target=${target} class=${linkCss} rel="noopener">
-    ${caption}
-  </button>
-`;
-
-export default Link;
+export default Button;

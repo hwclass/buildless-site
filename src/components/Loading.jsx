@@ -1,4 +1,4 @@
-import { html } from 'htm/preact';
+import { h } from 'preact';
 import css from 'csz';
 
 const loadingClassName = css`
@@ -6,14 +6,14 @@ const loadingClassName = css`
   display: block;
 `;
 
-const Loading = () => html`
+const Loading = () => (
   <img
     src="/hourglass.gif"
     width="50"
     height="50"
     alt="loading..."
-    class=${loadingClassName}
+    class={loadingClassName}
   />
-`;
+);
 
 export default Loading;

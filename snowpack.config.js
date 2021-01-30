@@ -1,27 +1,11 @@
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
   mount: {
-    public: '/',
-    src: '/_dist_',
+    public: { url: '/', static: false },
+    src: { url: '/dist' },
   },
-  plugins: ['@snowpack/plugin-dotenv', '@prefresh/snowpack'],
-  install: [
-    /* ... */
-  ],
-  installOptions: {
-    /* ... */
-  },
-  devOptions: {
-    /* ... */
-  },
-  buildOptions: {
-    /* ... */
-  },
-  proxy: {
-    /* ... */
-  },
-
-  alias: {
-    /* ... */
+  plugins: ['@snowpack/plugin-dotenv'],
+  packageOptions: {
+    source: 'remote',
   },
 };

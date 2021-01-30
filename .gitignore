@@ -3,3 +3,5 @@ node_modules
 .now
 .vercel
 .env
+.snowpack
+build
