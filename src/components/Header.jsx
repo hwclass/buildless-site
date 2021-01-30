@@ -1,12 +1,12 @@
-import { html } from 'htm/preact';
+import { h } from 'preact';
 import css from 'csz';
 
-import Title from './Title.js';
+import Title from './Title';
 
 const headerCss = css`
   display: flex;
   justify-content: center;
-  padding: 0 8px;
+  padding: 10px 8px;
   width: 100%;
 
   @media (min-width: 576px) {
@@ -17,10 +17,10 @@ const headerCss = css`
   }
 `;
 
-const Header = ({ title }) => html`
-  <header class=${headerCss}>
-    <${Title} content=${title} />
+const Header = ({ title }) => (
+  <header class={headerCss}>
+    <Title content={title} />
   </header>
-`;
+);
 
 export default Header;

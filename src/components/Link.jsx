@@ -1,7 +1,7 @@
-import { html } from 'htm/preact';
+import { h } from 'preact';
 import css from 'csz';
 
-const buttonCss = css`
+const linkCss = css`
   background: #0eed82;
   border: 0;
   border-radius: 5px;
@@ -18,10 +18,14 @@ const buttonCss = css`
   width: auto;
 `;
 
-const Button = ({ caption }) => html`
-  <button class=${buttonCss}>
-    ${caption}
-  </button>
-`;
+const glitchBoilerplateUrl =
+  import.meta.env.SNOWPACK_PUBLIC_GLITCH_BOILERPLATE_URL ??
+  'https://glitch.com/~buildless-boilerplate';
 
-export default Button;
+const Link = ({ caption, href = glitchBoilerplateUrl, target = '_blank' }) => (
+  <a href={href} target={target} class={linkCss} rel="noopener">
+    {caption}
+  </a>
+);
+
+export default Link;

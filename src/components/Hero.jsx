@@ -1,8 +1,8 @@
-import { html } from 'htm/preact';
+import { h, Fragment } from 'preact';
 import css from 'csz';
 
-import Button from './Button.js';
-import Link from './Link.js';
+import Button from './Button';
+import Link from './Link';
 
 const quotes = [
   {
@@ -75,37 +75,30 @@ const spacer = css`
   flex-grow: 0.1;
 `;
 
-const Hero = () => html`
-  <section class=${heroCss}>
-    ${quotes.map(
-      quote => html`
-        <h2 class=${headingCss}>
-          <span class=${headingMonoCss}>
-            ${quote.content.buildless}
-          </span>
-
-          ${quote.content.heading}
-
-          <small class=${subheadingCss}>
-            ${quote.content.subheading}
-          </small>
+const Hero = () => (
+  <section class={heroCss}>
+    {quotes.map((quote) => (
+      <Fragment>
+        <h2 class={headingCss}>
+          <span class={headingMonoCss}>{quote.content.buildless}</span>
+          {quote.content.heading}
+          <small class={subheadingCss}>{quote.content.subheading}</small>
         </h2>
         <a
-          href=${quote.origin.url}
+          href={quote.origin.url}
           target="_blank"
-          class=${quoteOriginCss}
+          class={quoteOriginCss}
           rel="noopener"
         >
-          ${quote.origin.text}
+          {quote.origin.text}
         </a>
-      `,
-    )}
-    <article class=${buttonsWrapper}>
-      <${Link} href="#manifesto" target="_self" caption="Manifesto" />
-      <p class=${spacer}></p>
-      <${Link} caption="Get Started" />
+      </Fragment>
+    ))}
+    <article class={buttonsWrapper}>
+      <Link href="#manifesto" target="_self" caption="Manifesto" />
+      <p class={spacer}></p>
+      <Link caption="Get Started" />
     </article>
   </section>
-`;
-
+);
 export default Hero;

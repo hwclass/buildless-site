@@ -8,17 +8,19 @@
   --font-family-inter: 'Inter', sans-serif;
   --font-family-space-mono: 'Space Mono', monospace;
   --font-family-space-mono-bold: 'Space Mono Bold', monospace;
+  --font-size-tiny: 14px;
+  --font-size-small: 18px;
   --font-size-default: 20px;
   --font-size-medium: 24px;
   --font-size-large: 30px;
+  --font-size-huge: 36px;
+  --font-size-icon: 45px;
 
   /* Spaces / Paddings / Margins */
   --padding: 15px;
   --margin: 10px;
   --default-letter-spacing: 5%;
-  --letter-spacing: calc(
-    var(--default-letter-spacing) * 16
-  ); /* em calculation */
+  --letter-spacing: calc(var(--default-letter-spacing) * 16);
 }
 
 html {
