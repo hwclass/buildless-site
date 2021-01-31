@@ -1,7 +1,7 @@
 import { h } from 'preact';
 import css from 'csz';
 
-import ItemList from './ItemList.js';
+import ItemList from './ItemList';
 
 const itemListCss = css`
   list-style: none;

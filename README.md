@@ -1,4 +1,4 @@
-# Welcome to ![buildless.site](https://i.ibb.co/8XXyjN5/Group-1.png) 👋
+![](./public/teaser.png)
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000) ![](https://img.shields.io/badge/node-12.x-blue.svg) [ ![License: ISC](https://img.shields.io/badge/License-ISC-yellow.svg) ](#) [![Twitter: hwclass](https://img.shields.io/twitter/follow/hwclass.svg?style=social)](https://twitter.com/hwclass)
 
@@ -30,7 +30,7 @@ Note: Since everytime when somethinng changes in the code, `npm run build` is tr
 
 ## Component Dependency Graph
 
-![](./dependencygraph.svg)
+![](./public/dependencygraph.svg)
 
 ## API
 
@@ -74,6 +74,57 @@ Note: Since everytime when somethinng changes in the code, `npm run build` is tr
     }
   ]
 }
+```
+
+`/api/tools` [GET] : returns the following payload from [api/tools/index.js](https://github.com/hwclass/buildless-site/blob/master/api/tools/index.js#L12):
+
+```json
+[
+  {
+    "title": "browserslist",
+    "link": "https://github.com/browserslist/browserslist",
+  },
+  {
+    "title": "csz",
+    "link": "https://github.com/lukejacksonn/csz",
+  },
+  {
+    "title": "htm',
+    "link": "https://github.com/developit/htm",
+  },
+  {
+    "title": "husky',
+    "link": "https://github.com/typicode/husky",
+  },
+  {
+    "title": "zeit now',
+    "link": "https://zeit.co/",
+  },
+  {
+    "title": "snowpack',
+    "link": "https://www.snowpack.dev/",
+  },
+  {
+    "title": "preact',
+    "link": "https://preactjs.com/",
+  },
+  {
+    "title": "preact-fetch',
+    "link": "https://www.pika.dev/npm/preact-fetch",
+  },
+  {
+    "title": "prettier',
+    "link": "https://prettier.io/",
+  },
+  {
+    "title": "pretty-quick',
+    "link": "https://www.npmjs.com/package/pretty-quick",
+  },
+  {
+    "title": "svg backgrounds',
+    "link": "https://www.svgbackgrounds.com",
+  }
+]
 ```
 
 ## Tech Stack
