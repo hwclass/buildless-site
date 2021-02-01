@@ -5,6 +5,12 @@ const headingCss = css`
   color: var(--color-white);
 `;
 
+const iframeCss = css`
+  border: 0;
+  height: 100%;
+  width: 100%;
+`;
+
 const Boilerplates = () => (
   <section>
     <h2
@@ -38,15 +44,17 @@ const Boilerplates = () => (
       <div style="width: 50%;">
         <iframe
           src="https://glitch.com/embed/#!/embed/react-buildless-boilerplate?path=client.js&previewSize=0&sidebarCollapsed=true&attributionHidden=true"
+          loading="lazy"
           title="react-buildless-boilerplate on Glitch"
-          style="height: 100%; width: 100%; border: 0;"
+          class={iframeCss}
         ></iframe>
       </div>
       <div style="width: 50%;">
         <iframe
           src="https://glitch.com/embed/#!/embed/vue-buildless-boilerplate?path=src/components/App.js&previewSize=0&sidebarCollapsed=true&attributionHidden=true"
+          loading="lazy"
           title="vue-buildless-boilerplate on Glitch"
-          style="height: 100%; width: 100%; border: 0;"
+          class={iframeCss}
         ></iframe>
       </div>
     </section>
