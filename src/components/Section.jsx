@@ -4,10 +4,11 @@ import css from 'csz';
 import ItemList from './ItemList';
 
 const itemListCss = css`
-  list-style: none;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
 `;
 
 const Section = ({ title, list }) => (
