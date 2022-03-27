@@ -15,7 +15,7 @@ const Sections = withFetch(sectionsUrl, { mapDataToProps: mapSectionsToProps })(
   App,
 );
 
-const toolsUrl = import.meta.env.SNOWPACK_PUBLIC_API_TOOL;
+const toolsUrl = import.meta.env.SNOWPACK_PUBLIC_API_TOOLS;
 const mapToolsToProps = (tools) => ({ tools });
 const FooterWithData = withFetch(toolsUrl, { mapDataToProps: mapToolsToProps })(
   Footer,
