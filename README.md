@@ -10,11 +10,12 @@ Please go & check [awesome-buildless](https://github.com/hwclass/awesome-buildle
 
 ## Prerequisites
 
-- Set your Node.js version as follows as minimum:
+- Set your Node.js version as 14 as minimum:
 
 ```sh
-nvm use # will set the local Node.js as 16.x if installed via nvm
-# if not, please visit https://github.com/nvm-sh/nvm#install--update-script
+nvm use 14 # will set the local Node.js as 14.x if installed via nvm
+# if not, please visit https://github.com/nvm-sh/nvm#install--update-script, then
+nvm install 14
 ```
 
 - Create a `.env` file in the main directory by duplicating from the .env.example:
