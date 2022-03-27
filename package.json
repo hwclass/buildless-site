@@ -5,7 +5,7 @@
   "repository": "https://github.com/hwclass/buildless-site",
   "main": "index.js",
   "engines": {
-    "node": "12.x"
+    "node": "16.x"
   },
   "scripts": {
     "start": "snowpack dev",
@@ -30,7 +30,8 @@
     "husky": "^4.3.8",
     "prettier": "^2.0.5",
     "pretty-quick": "^3.1.0",
-    "snowpack": "^3.0.1"
+    "snowpack": "^3.0.1",
+    "vercel": "^24.0.1"
   },
   "browserslist": ">0.75%, not ie 11, not op_mini all",
   "husky": {

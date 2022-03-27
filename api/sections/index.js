@@ -25,7 +25,7 @@ const headingIds = {
   presentations: 'presentations--talks',
 };
 
-module.exports = async function(req, res) {
+module.exports = async function (req, res) {
   await cors(req, res);
 
   res.setHeader('Cache-Control', 's-maxage=1, stale-while-revalidate');
@@ -40,9 +40,9 @@ module.exports = async function(req, res) {
     const links = [];
     const linkCollection = Array.from(
       dom.window.document.querySelectorAll(`#${id} + ul li`),
-    ).map(link => link.children);
+    ).map((link) => link.children);
     for (let item of linkCollection) {
-      Array.from(item).map(item => {
+      Array.from(item).map((item) => {
         links.push({
           content: item.innerHTML,
           href: item.href,
@@ -58,7 +58,7 @@ module.exports = async function(req, res) {
     list: getList(dom, id),
   });
 
-  const getSections = dom => {
+  const getSections = (dom) => {
     const articles = getSection(headingIds.articles, dom);
     const tutorials = getSection(headingIds.tutorials, dom);
     const platforms = getSection(headingIds.platforms, dom);
@@ -76,14 +76,14 @@ module.exports = async function(req, res) {
     ];
   };
 
-  https.get(readmeUrl, resp => {
+  https.get(readmeUrl, (resp) => {
     let data = '';
-    resp.on('data', chunk => {
+    resp.on('data', (chunk) => {
       data += chunk;
     });
 
     resp.on('end', () => {
-      const html = marked(data);
+      const html = marked.parse(data);
 
       const dom = new JSDOM(html);
 

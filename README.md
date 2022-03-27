@@ -4,35 +4,59 @@
 
 A collection of sites, apps, packages, articles and other stuff about ES modules.
 
+Please go & check [awesome-buildless](https://github.com/hwclass/awesome-buildless) for the content as an awesome list.
+
 ### 🏠 [Homepage](https://buildless.site)
 
 ## Prerequisites
 
-- Node.js 12.x
-- npm 6.x.x
+- Set your Node.js version as follows as minimum:
 
-## Install
+```sh
+nvm use # will set the local Node.js as 16.x if installed via nvm
+# if not, please visit https://github.com/nvm-sh/nvm#install--update-script
+```
+
+- Create a `.env` file in the main directory by duplicating from the .env.example:
+
+```env
+SNOWPACK_PUBLIC_API_TOOLS="http://localhost:3000/api/tools"
+SNOWPACK_PUBLIC_GLITCH_BOILERPLATE_URL="https://glitch.com/~buildless-boilerplate"
+SNOWPACK_PUBLIC_API_SECTION="http://localhost:3000/api/sections"
+```
+
+## Development
+
+Install:
 
 ```sh
 npm install
 ```
 
-## Run
+From your terminal:
 
 ```sh
-# run the api
-npm run api
-# run the app
-npm start
+make start
 ```
+
+This starts your client app & api in development mode, rebuilding assets on file changes.
 
 Note: Since everytime when somethinng changes in the code, `npm run build` is triggered via vercel & this also causes another (p)react re-render via `@prefresh/snowpack` which triggers an endless refresh loop. This should be fixed in the other updates.
 
+You can update the dependency graph with the following commands:
+
+```sh
+npm i -g dependency-cruiser
+depcruise --exclude "^node_modules" --output-type dot src | dot -T svg > dependencygraph.svg
+```
+
 ## Component Dependency Graph
 
-![](./public/dependencygraph.svg)
+![Dependency Graph](./public/dependencygraph.svg)
 
-## API
+## Application
+
+Once the client app and the API runs, go into the main page (ideally http://localhost:8000).
 
 ### Fetch sections
 
