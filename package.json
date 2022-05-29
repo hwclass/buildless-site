@@ -5,7 +5,7 @@
   "repository": "https://github.com/hwclass/buildless-site",
   "main": "index.js",
   "engines": {
-    "node": "14.x"
+    "node": "16.x"
   },
   "scripts": {
     "start": "snowpack dev",
@@ -23,14 +23,14 @@
     "marked": "^4.0.10"
   },
   "devDependencies": {
-    "@prefresh/snowpack": "^3.0.2",
-    "@snowpack/plugin-dotenv": "^2.0.5",
-    "@snowpack/web-test-runner-plugin": "^0.2.0",
+    "@prefresh/snowpack": "^3.1.4",
+    "@snowpack/plugin-dotenv": "^2.2.0",
+    "@snowpack/web-test-runner-plugin": "^0.2.2",
     "@web/test-runner": "^0.12.0",
     "husky": "^4.3.8",
     "prettier": "^2.0.5",
     "pretty-quick": "^3.1.0",
-    "snowpack": "^3.0.1",
+    "snowpack": "^3.8.8",
     "vercel": "^24.0.1"
   },
   "browserslist": ">0.75%, not ie 11, not op_mini all",

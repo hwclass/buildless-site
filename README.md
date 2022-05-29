@@ -13,10 +13,12 @@ Please go & check [awesome-buildless](https://github.com/hwclass/awesome-buildle
 - Set your Node.js version as 14 as minimum:
 
 ```sh
-nvm use 14 # will set the local Node.js as 14.x if installed via nvm
+nvm use 16 # will set the local Node.js as 16.x if installed via nvm
 # if not, please visit https://github.com/nvm-sh/nvm#install--update-script, then
-nvm install 14
+nvm install 16
 ```
+
+## Development
 
 - Create a `.env` file in the main directory by duplicating from the .env.example:
 
@@ -25,8 +27,6 @@ SNOWPACK_PUBLIC_API_TOOLS="http://localhost:3000/api/tools"
 SNOWPACK_PUBLIC_GLITCH_BOILERPLATE_URL="https://glitch.com/~buildless-boilerplate"
 SNOWPACK_PUBLIC_API_SECTION="http://localhost:3000/api/sections"
 ```
-
-## Development
 
 Install:
 
