@@ -16,9 +16,9 @@ interface SectionsData {
       list: [{
         content: string;
         href: string;
-      }];
-    }];
-  };
+      }]
+    }]
+  }
   results: string[];
   query: string;
 }
