@@ -1,8 +1,5 @@
 import { h } from "preact";
 
-// import Error from './Error.tsx';
-// import Loading from './Loading.tsx';
-
 const tools = [
   {
     title: "deno",
