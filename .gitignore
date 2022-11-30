@@ -1,8 +1,0 @@
-node_modules
-.idea
-.now
-.vercel
-.env
-.env.local
-.snowpack
-build

@@ -1,67 +1,59 @@
-![](./public/teaser.png)
+![](./static/teaser.png)
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000) ![](https://img.shields.io/badge/node-12.x-blue.svg) [ ![License: ISC](https://img.shields.io/badge/License-ISC-yellow.svg) ](#) [![Twitter: hwclass](https://img.shields.io/twitter/follow/hwclass.svg?style=social)](https://twitter.com/hwclass)
+[![Made with Fresh](https://fresh.deno.dev/fresh-badge.svg)](https://fresh.deno.dev)
 
-A collection of sites, apps, packages, articles and other stuff about ES modules.
+![Version](https://img.shields.io/badge/version-2.0.0-blue.svg?cacheSeconds=2592000)
+![deno compatibility](https://shield.deno.dev/deno/1.28)
+[![fresh](https://shield.deno.dev/x/fresh)](https://deno.land/x/fresh)
+[![License: ISC](https://img.shields.io/badge/License-ISC-yellow.svg)](#)
+[![Twitter: hwclass](https://img.shields.io/twitter/follow/hwclass.svg?style=social)](https://twitter.com/hwclass)
 
-Please go & check [awesome-buildless](https://github.com/hwclass/awesome-buildless) for the content as an awesome list.
+A collection of sites, apps, packages, articles and other stuff about ES
+modules.
+
+Please go & check
+[awesome-buildless](https://github.com/hwclass/awesome-buildless) for the
+content as an awesome list.
 
 ### 🏠 [Homepage](https://buildless.site)
 
 ## Prerequisites
 
-- Set your Node.js version as 14 as minimum:
+- You will need Deno installed on your system:
 
-```sh
-nvm use 16 # will set the local Node.js as 16.x if installed via nvm
-# if not, please visit https://github.com/nvm-sh/nvm#install--update-script, then
-nvm install 16
-```
+[Instal from here](https://deno.land/manual@v1.28.1/getting_started/installation)
 
 ## Development
 
-- Create a `.env` file in the main directory by duplicating from the .env.example:
+- Create a `.env` file in the main directory by duplicating from the
+  .env.example:
 
 ```env
-SNOWPACK_PUBLIC_API_TOOLS="http://localhost:3000/api/tools"
 SNOWPACK_PUBLIC_GLITCH_BOILERPLATE_URL="https://glitch.com/~buildless-boilerplate"
-SNOWPACK_PUBLIC_API_SECTION="http://localhost:3000/api/sections"
+SECTIONS_API_ENDPOINT="http://localhost:3000/api/sections"
 ```
 
-Install:
+Run (with PRODUCTION=false flag):
 
 ```sh
-npm install
+deno task dev
 ```
 
-From your terminal:
+Run (with production):
 
 ```sh
-make start
+deno task start
 ```
-
-This starts your client app & api in development mode, rebuilding assets on file changes.
-
-Note: Since everytime when somethinng changes in the code, `npm run build` is triggered via vercel & this also causes another (p)react re-render via `@prefresh/snowpack` which triggers an endless refresh loop. This should be fixed in the other updates.
-
-You can update the dependency graph with the following commands:
-
-```sh
-npm i -g dependency-cruiser
-depcruise --exclude "^node_modules" --output-type dot src | dot -T svg > dependencygraph.svg
-```
-
-## Component Dependency Graph
-
-![Dependency Graph](./public/dependencygraph.svg)
 
 ## Application
 
-Once the client app and the API runs, go into the main page (ideally http://localhost:8000).
+Once the app and the API begin running, go hit the main page over
+http://localhost:8000.
 
 ### Fetch sections
 
-`/api/sections` [GET] : returns the following payload from [awesome-buildless](https://github.com/hwclass/awesome-buildless) repo:
+`/api/sections` [GET] : returns the following payload from
+[awesome-buildless](https://github.com/hwclass/awesome-buildless) repo:
 
 ```json
 {
@@ -101,64 +93,11 @@ Once the client app and the API runs, go into the main page (ideally http://loca
 }
 ```
 
-`/api/tools` [GET] : returns the following payload from [api/tools/index.js](https://github.com/hwclass/buildless-site/blob/master/api/tools/index.js#L12):
-
-```json
-[
-  {
-    "title": "browserslist",
-    "link": "https://github.com/browserslist/browserslist",
-  },
-  {
-    "title": "csz",
-    "link": "https://github.com/lukejacksonn/csz",
-  },
-  {
-    "title": "htm',
-    "link": "https://github.com/developit/htm",
-  },
-  {
-    "title": "husky',
-    "link": "https://github.com/typicode/husky",
-  },
-  {
-    "title": "zeit now',
-    "link": "https://zeit.co/",
-  },
-  {
-    "title": "snowpack',
-    "link": "https://www.snowpack.dev/",
-  },
-  {
-    "title": "preact',
-    "link": "https://preactjs.com/",
-  },
-  {
-    "title": "preact-fetch',
-    "link": "https://www.pika.dev/npm/preact-fetch",
-  },
-  {
-    "title": "prettier',
-    "link": "https://prettier.io/",
-  },
-  {
-    "title": "pretty-quick',
-    "link": "https://www.npmjs.com/package/pretty-quick",
-  },
-  {
-    "title": "svg backgrounds',
-    "link": "https://www.svgbackgrounds.com",
-  }
-]
-```
-
 ## Tech Stack
 
-- [snowpack](https://www.snowpack.dev/)
+- [deno](https://deno.land/)
+- [fresh](https://fresh.deno.dev/)
 - [preact](https://preactjs.com/)
-- [preact-fetch](https://www.pika.dev/npm/preact-fetch)
-- [htm](https://github.com/developit/htm)
-- [marked](https://www.npmjs.com/package/marked)
 - [svg backgrounds](https://www.svgbackgrounds.com)
 
 ## Authors
