@@ -27,18 +27,23 @@ const baseUrl = Deno.env.get("PRODUCTION")
 
 export const handler: Handlers<SectionsData | null> = {
   async GET(_, ctx) {
-    const response = await fetch(baseUrl + SECTIONS_API_ENDPOINT);
-    //TODO: Remove the logs
-    console.log(`handler:response, ${JSON.stringify(response)}`)
-    if (response.status === 404) {
-      console.log(`handler:response.status, ${response.status}`)
+    try {
+      const response = await fetch(baseUrl + SECTIONS_API_ENDPOINT);
+      //TODO: Remove the logs
+      console.log(`handler:response, ${JSON.stringify(response)}`)
+      if (response.status === 404) {
+        console.log(`handler:response.status, ${response.status}`)
+        return ctx.render(null);
+      }
+      console.log(`handler:baseUrl + SECTIONS_API_ENDPOINT, ${baseUrl + SECTIONS_API_ENDPOINT}`)
+      const data = await response.json();
+      //TODO: Remove the logs
+      console.log(`handler:sections, ${JSON.parse(JSON.stringify(data.sections))}`)
+      return ctx.render({ sections: JSON.parse(JSON.stringify(data.sections)) });
+    } catch(err) {
+      console.log(`handler:err, ${err}`)
       return ctx.render(null);
     }
-    console.log(`handler:baseUrl + SECTIONS_API_ENDPOINT, ${baseUrl + SECTIONS_API_ENDPOINT}`)
-    const data = await response.json();
-    //TODO: Remove the logs
-    console.log(`handler:sections, ${JSON.parse(JSON.stringify(data.sections))}`)
-    return ctx.render({ sections: JSON.parse(JSON.stringify(data.sections)) });
   },
 };
 
