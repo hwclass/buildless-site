@@ -44,7 +44,7 @@ export const handler: Handlers<SectionsData | null> = {
 
 export default function Page({ data }: PageProps<SectionsData | null>) {
   const { sections } = data;
-  console.log(sections)
+  console.log(`Page: ${sections}`)
   return (
     <>
       <Head>
