@@ -29,7 +29,7 @@ export const handler: Handlers<SectionsData | null> = {
   async GET(_, ctx) {
     const response = await fetch(baseUrl + SECTIONS_API_ENDPOINT);
     //TODO: Remove the logs
-    console.log(`handler:response, ${response}`)
+    console.log(`handler:response, ${JSON.stringify(response)}`)
     if (response.status === 404) {
       console.log(`handler:response.status, ${response.status}`)
       return ctx.render(null);
