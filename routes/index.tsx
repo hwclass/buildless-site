@@ -39,7 +39,7 @@ export const handler: Handlers<SectionsData | null> = {
       const sections = await response.json() ?? null;
       //TODO: Remove the logs
       console.log(`handler:sections, ${JSON.parse(JSON.stringify(sections))}`)
-      return ctx.render({ sections: sections });
+      return ctx.render({ sections });
     } catch(err) {
       console.log(`handler:err, ${err}`)
       return ctx.render(null);
