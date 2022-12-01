@@ -63,7 +63,7 @@ export const handler: Handlers<null> = {
       sections,
     };
 
-    return new Response(JSON.stringify(structuredDoc), {
+    return new Response(structuredDoc, {
       headers: {
         "Content-Type": "application/json",
       },

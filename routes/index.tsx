@@ -33,15 +33,16 @@ export const handler: Handlers<SectionsData | null> = {
     if (response.status === 404) {
       return ctx.render(null);
     }
-    const entries: SectionsData = await response.json();
+    const data: SectionsData = await response.json();
     //TODO: Remove the logs
-    console.log(`handler:entries, ${entries}`)
-    return ctx.render(entries);
+    console.log(`handler:sections, ${data.sections}`)
+    return ctx.render({ sections: data.sections });
   },
 };
 
 export default function Page({ data }: PageProps<SectionsData | null>) {
   const { sections } = data;
+  console.log(sections)
   return (
     <>
       <Head>
