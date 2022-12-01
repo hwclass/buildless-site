@@ -16,10 +16,10 @@ interface SectionsData {
       list: [{
         content: string;
         href: string;
-      }];
-    }];
-  };
-  results: string[];
+      }]
+    }]
+  }
+  results: string[]
   query: string;
 }
 
