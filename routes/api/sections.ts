@@ -69,13 +69,13 @@ export const handler: Handlers<SectionsData | null> = {
       { ...getSection(headingIds.presentations) },
     ];
 
-    const structuredDoc = {
-      sections,
-    };
+    // const structuredDoc = {
+    //   sections,
+    // };
 
-    console.log(`server:structuredDoc, ${JSON.stringify(structuredDoc).trim()}`)
+    console.log(`server:structuredDoc, ${JSON.stringify(sections).trim()}`)
 
-    return new Response(JSON.stringify(structuredDoc).trim(), {
+    return new Response(JSON.stringify(sections).trim(), {
       headers: {
         "Content-Type": "application/json",
       },
