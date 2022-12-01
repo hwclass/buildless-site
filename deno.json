@@ -1,6 +1,6 @@
 {
   "tasks": {
-    "start": "PRODUCTION=true deno run -A --watch=static/,routes/ dev.ts",
+    "start": "PRODUCTION=true deno run -A --watch=static/,routes/ main.ts",
     "dev": "deno run -A --watch=static/,routes/ dev.ts"
   },
   "importMap": "./import_map.json",

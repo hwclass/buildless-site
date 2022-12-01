@@ -1,7 +1,7 @@
 import SectionList from "./SectionList.tsx";
 
 function Sections({ sections = [] }) {
-  console.log(`Sections:sections, ${JSON.stringify(sections)}`)
+  console.log(`Sections:sections, ${JSON.stringify(sections.sections)}`)
   return <SectionList data={sections} />;
 }
 
