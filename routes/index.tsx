@@ -10,17 +10,13 @@ import Sections from "../components/Sections.tsx";
 import Footer from "../components/Footer.tsx";
 
 interface SectionsData {
-  entries: {
-    sections: [{
-      title: string;
-      list: [{
-        content: string;
-        href: string;
-      }]
+  sections: [{
+    title: string;
+    list: [{
+      content: string;
+      href: string;
     }]
-  }
-  results: string[]
-  query: string;
+  }]
 }
 
 const HOST = Deno.env.get("HOST");
