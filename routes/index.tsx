@@ -27,11 +27,15 @@ const baseUrl = Deno.env.get("PRODUCTION")
 
 export const handler: Handlers<SectionsData | null> = {
   async GET(_, ctx) {
-    const resp = await fetch(baseUrl + SECTIONS_API_ENDPOINT);
-    if (resp.status === 404) {
+    const response = await fetch(baseUrl + SECTIONS_API_ENDPOINT);
+    //TODO: Remove the logs
+    console.log(`handler:response, ${response}`)
+    if (response.status === 404) {
       return ctx.render(null);
     }
-    const entries: SectionsData = await resp.json();
+    const entries: SectionsData = await response.json();
+    //TODO: Remove the logs
+    console.log(`handler:entries, ${entries}`)
     return ctx.render(entries);
   },
 };
