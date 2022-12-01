@@ -31,8 +31,10 @@ export const handler: Handlers<SectionsData | null> = {
     //TODO: Remove the logs
     console.log(`handler:response, ${response}`)
     if (response.status === 404) {
+      console.log(`handler:response.status, ${response.status}`)
       return ctx.render(null);
     }
+    console.log(`handler:baseUrl + SECTIONS_API_ENDPOINT, ${baseUrl + SECTIONS_API_ENDPOINT}`)
     const data: SectionsData = await response.json();
     //TODO: Remove the logs
     console.log(`handler:sections, ${data.sections}`)

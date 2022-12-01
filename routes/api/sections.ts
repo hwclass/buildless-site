@@ -2,7 +2,17 @@ import { HandlerContext, Handlers } from "$fresh/server.ts";
 import * as marked from "https://esm.sh/marked@4.2.3";
 import * as cheerio from "https://esm.sh/cheerio@1.0.0-rc.12";
 
-export const handler: Handlers<null> = {
+interface SectionsData {
+  sections: [{
+    title: string;
+    list: [{
+      content: string;
+      href: string;
+    }]
+  }]
+}
+
+export const handler: Handlers<SectionsData | null> = {
   async GET(_, ctx: HandlerContext) {
     const readmeUrl =
       "https://raw.githubusercontent.com/hwclass/awesome-buildless/master/README.md";
@@ -63,7 +73,7 @@ export const handler: Handlers<null> = {
       sections,
     };
 
-    return new Response(structuredDoc, {
+    return new Response(JSON.stringify(structuredDoc), {
       headers: {
         "Content-Type": "application/json",
       },
