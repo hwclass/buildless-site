@@ -48,7 +48,7 @@ export const handler: Handlers<SectionsData | null> = {
 };
 
 export default function Page({ data }: PageProps<SectionsData | null>) {
-  const { sections } = data;
+  const sections = data?.sections
   console.log(`Page: ${sections}`)
   return (
     <>

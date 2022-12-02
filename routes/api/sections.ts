@@ -39,10 +39,10 @@ export const handler: Handlers<SectionsData | null> = {
     const html = marked.parse(readmeData);
     const $ = cheerio.load(html);
 
-    function getSection(sectionId) {
+    function getSection(sectionId: string) {
       const sectionTitle = $(`#${sectionId}`).text();
 
-      let linkList: { content: string; href: string }[] = [];
+      const linkList: { content: string; href: string }[] = [];
 
       $(`#${sectionId} + ul li`)
         .each((_, listItem) => {
