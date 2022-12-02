@@ -1,17 +1,18 @@
-import { h } from "preact";
-
 import Title from "./Title.tsx";
 
-const Header = ({ title }) => {
+const Header = ({ title }: { title: string }) => {
+  const blogIsActive = Deno.env.get('IS_BLOG_ACTIVE')
   return (
     <header>
       <Title content={title} />
       <ul class='menu'>
-        <li class='header-title-small menuItem'>
-          <a href="/blog" class="normalizedAhref">
-            Blog
-          </a>
-        </li>
+        {blogIsActive == "1" ? (
+          <li class='header-title-small menuItem'>
+            <a href="/blog" class="normalizedAhref">
+              Blog
+            </a>
+          </li>
+        ) : null}
         <li class='menuItem'>
           <a href="https://fresh.deno.dev">
             <img
