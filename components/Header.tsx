@@ -6,13 +6,13 @@ const Header = ({ title }) => {
   return (
     <header>
       <Title content={title} />
-      <ul style={'display: flex; flex-direction: row; align-items: center;'}>
-        <li style={'padding: 0 50px;'}>
-          <a href="/blog">
+      <ul class='menu'>
+        <li class='header-title-small menuItem'>
+          <a href="/blog" class="normalizedAhref">
             Blog
           </a>
         </li>
-        <li>
+        <li class='menuItem'>
           <a href="https://fresh.deno.dev">
             <img
               width="197"
