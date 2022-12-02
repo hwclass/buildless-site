@@ -75,7 +75,7 @@ export const handler: Handlers<SectionsData | null> = {
 
     console.log(`server:structuredDoc, ${JSON.stringify(sections).trim()}`)
 
-    return new Response(sections, {
+    return new Response(JSON.stringify(sections).trim(), {
       headers: {
         "Content-Type": "application/json",
       },
