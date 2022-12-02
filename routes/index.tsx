@@ -1,11 +1,13 @@
 import { asset, Head } from "$fresh/runtime.ts";
-import { Handlers, PageProps } from "$fresh/server.ts";
+import { HandlerContext, Handlers, PageProps } from "$fresh/server.ts";
+import * as marked from "https://esm.sh/marked@4.2.3";
+import * as cheerio from "https://esm.sh/cheerio@1.0.0-rc.12";
 
 import Header from "../components/Header.tsx";
 import Hero from "../components/Hero.tsx";
-import EmbedCode from "../components/EmbedCode.tsx";
+import EmbedCode from "../islands/EmbedCode.tsx";
 import Manifesto from "../components/Manifesto.tsx";
-import Boilerplates from "../components/Boilerplates.tsx";
+import Boilerplates from "../islands/Boilerplates.tsx";
 import Sections from "../components/Sections.tsx";
 import Footer from "../components/Footer.tsx";
 
@@ -19,26 +21,64 @@ interface SectionsData {
   }]
 }
 
-const HOST = Deno.env.get("HOST");
-const SECTIONS_API_ENDPOINT = Deno.env.get("SECTIONS_API_ENDPOINT");
-const baseUrl = Deno.env.get("PRODUCTION")
-  ? `https://${HOST}/`
-  : "http://localhost:8000/";
-
 export const handler: Handlers<SectionsData | null> = {
   async GET(_, ctx) {
     try {
-      const response = await fetch(baseUrl + SECTIONS_API_ENDPOINT);
-      //TODO: Remove the logs
-      console.log(`handler:response, ${JSON.stringify(response)}`)
-      if (response.status === 404) {
-        console.log(`handler:response.status, ${response.status}`)
-        return ctx.render(null);
+      const readmeUrl =
+      "https://raw.githubusercontent.com/hwclass/awesome-buildless/master/README.md";
+
+      const headingIds = {
+        articles: "articles",
+        tutorials: "tutorials",
+        platforms: "tools--platforms",
+        libraries: "packages--libraries",
+        videos: "videos",
+        presentations: "presentations--talks",
+      };
+
+      const resp = await fetch(readmeUrl);
+
+      if (resp.status === 404) {
+        return new Response(
+          "404: Error while fetching content... Please try again.",
+        );
       }
-      console.log(`handler:baseUrl + SECTIONS_API_ENDPOINT, ${baseUrl + SECTIONS_API_ENDPOINT}`)
-      const sections = await response.json() ?? null;
-      //TODO: Remove the logs
-      console.log(`handler:sections, ${JSON.parse(JSON.stringify(sections))}`)
+
+      const readmeData = await resp.text();
+
+      const html = marked.parse(readmeData);
+      const $ = cheerio.load(html);
+
+      const sections = [
+        { ...getSection(headingIds.articles) },
+        { ...getSection(headingIds.tutorials) },
+        { ...getSection(headingIds.platforms) },
+        { ...getSection(headingIds.libraries) },
+        { ...getSection(headingIds.videos) },
+        { ...getSection(headingIds.presentations) },
+      ];
+
+      function getSection(sectionId: string) {
+        const sectionTitle = $(`#${sectionId}`).text();
+      
+        const linkList: { content: string; href: string }[] = [];
+      
+        $(`#${sectionId} + ul li`)
+          .each((_, listItem) => {
+            linkList.push({
+              content: $("a", listItem).text(),
+              href: $("a", listItem).attr("href"),
+            });
+          });
+      
+        const section = {
+          title: sectionTitle,
+          list: linkList,
+        };
+      
+        return section;
+      }
+
       return ctx.render({ sections });
     } catch(err) {
       console.log(`handler:err, ${err}`)
@@ -48,13 +88,11 @@ export const handler: Handlers<SectionsData | null> = {
 };
 
 export default function Page({ data }: PageProps<SectionsData | null>) {
-  const sections = JSON.parse(JSON.stringify(data?.sections))
-  console.log(`Page:data, ${JSON.parse(JSON.stringify(data))}`)
-  console.log(`Page:sections, ${sections}`)
+  const sections = JSON.parse(JSON.stringify(data))
   return (
     <>
       <Head>
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"

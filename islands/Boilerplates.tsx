@@ -1,5 +1,3 @@
-import { h } from "preact";
-
 const Boilerplates = () => (
   <section>
     <h2 class="headingWrapper">
