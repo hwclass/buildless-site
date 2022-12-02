@@ -48,8 +48,9 @@ export const handler: Handlers<SectionsData | null> = {
 };
 
 export default function Page({ data }: PageProps<SectionsData | null>) {
-  const sections = data?.sections
-  console.log(`Page: ${sections}`)
+  const sections = JSON.parse(JSON.stringify(data?.sections))
+  console.log(`Page:data, ${JSON.parse(JSON.stringify(data))}`)
+  console.log(`Page:sections, ${sections}`)
   return (
     <>
       <Head>
