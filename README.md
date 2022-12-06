@@ -29,8 +29,8 @@ content as an awesome list.
   .env.example:
 
 ```env
-SNOWPACK_PUBLIC_GLITCH_BOILERPLATE_URL="https://glitch.com/~buildless-boilerplate"
-SECTIONS_API_ENDPOINT="http://localhost:3000/api/sections"
+GLITCH_BOILERPLATE_URL="https://glitch.com/~buildless-boilerplate"
+SECTIONS_API_ENDPOINT="api/sections"
 ```
 
 Run (with PRODUCTION=false flag):
