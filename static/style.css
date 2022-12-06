@@ -88,6 +88,47 @@ iframe {
   }
 }
 
+/* Top Bar */
+.notification-top-bar {
+  display: block;
+  top: 0;
+  left: 0;
+  height: auto;
+  line-height: 40px;
+  width: 100%;
+  background: var(--color-green);
+  text-align: center;
+  color: var(--color-black);
+  font-family: sans-serif;
+  font-weight: lighter;
+  font-size: 16px;
+}
+
+.notification-top-bar p {
+  padding: 0;
+  margin: 0;
+}
+
+.notification-top-bar p a {
+  padding: 5px 10px;
+  margin: 0 10px;
+  border-radius: 3px;
+  background: #FFF;
+  color: var(--color-black);
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.notification-top-bar p small {
+  color: var(--color-black);
+  font-weight: bold; 
+}
+
+.hide {
+  display: none;
+}
+
 /* Header */
 header {
   align-items: center;
