@@ -129,10 +129,6 @@ iframe {
   display: none;
 }
 
-.notification-top-bar .announcement {
-  /* background-color: var(--color-white); */
-}
-
 /* Header */
 header {
   align-items: center;
