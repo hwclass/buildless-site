@@ -8,6 +8,7 @@ import * as $1 from "./routes/blog/index.tsx";
 import * as $2 from "./routes/index.tsx";
 import * as $$0 from "./islands/Boilerplates.tsx";
 import * as $$1 from "./islands/EmbedCode.tsx";
+import * as $$2 from "./islands/NotificationBar.tsx";
 
 const manifest = {
   routes: {
@@ -18,6 +19,7 @@ const manifest = {
   islands: {
     "./islands/Boilerplates.tsx": $$0,
     "./islands/EmbedCode.tsx": $$1,
+    "./islands/NotificationBar.tsx": $$2,
   },
   baseUrl: import.meta.url,
   config,

@@ -10,6 +10,7 @@ import Manifesto from "../components/Manifesto.tsx";
 import Boilerplates from "../islands/Boilerplates.tsx";
 import Sections from "../components/Sections.tsx";
 import Footer from "../components/Footer.tsx";
+import NotificationBar from "../islands/NotificationBar.tsx";
 
 interface SectionsData {
   sections: [{
@@ -159,6 +160,7 @@ export default function Page({ data }: PageProps<SectionsData | null>) {
         >
         </script>
       </Head>
+      <NotificationBar/>
       <main class="container">
         <Header title="buildless.site" />
         <Hero />
