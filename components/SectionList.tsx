@@ -11,7 +11,7 @@ const SectionList = ({ data }: { data: { sections: [] } }) => {
         </li>
       ))}
     </ul>
-  )
-}
+  );
+};
 
 export default SectionList;

@@ -17,15 +17,15 @@ interface SectionsData {
     list: [{
       content: string;
       href: string;
-    }]
-  }]
+    }];
+  }];
 }
 
 export const handler: Handlers<SectionsData | null> = {
   async GET(_, ctx) {
     try {
       const readmeUrl =
-      "https://raw.githubusercontent.com/hwclass/awesome-buildless/master/README.md";
+        "https://raw.githubusercontent.com/hwclass/awesome-buildless/master/README.md";
 
       const headingIds = {
         articles: "articles",
@@ -60,9 +60,9 @@ export const handler: Handlers<SectionsData | null> = {
 
       function getSection(sectionId: string) {
         const sectionTitle = $(`#${sectionId}`).text();
-      
+
         const linkList: { content: string; href: string }[] = [];
-      
+
         $(`#${sectionId} + ul li`)
           .each((_, listItem) => {
             linkList.push({
@@ -70,25 +70,25 @@ export const handler: Handlers<SectionsData | null> = {
               href: $("a", listItem).attr("href"),
             });
           });
-      
+
         const section = {
           title: sectionTitle,
           list: linkList,
         };
-      
+
         return section;
       }
 
       return ctx.render({ sections });
-    } catch(err) {
-      console.log(`handler:err, ${err}`)
+    } catch (err) {
+      console.log(`handler:err, ${err}`);
       return ctx.render(null);
     }
   },
 };
 
 export default function Page({ data }: PageProps<SectionsData | null>) {
-  const sections = JSON.parse(JSON.stringify(data))
+  const sections = JSON.parse(JSON.stringify(data));
   return (
     <>
       <Head>
@@ -143,11 +143,6 @@ export default function Page({ data }: PageProps<SectionsData | null>) {
           rel="preload"
           href="https://fonts.googleapis.com/css?family=Space+Mono:400,700&display=swap"
           as="font"
-        />
-        <link
-          rel="preload"
-          href="https://s3-us-west-2.amazonaws.com/colors-css/2.2.0/colors.min.css"
-          as="style"
         />
         <link rel="stylesheet" href={asset("style.css")} />
         <script
