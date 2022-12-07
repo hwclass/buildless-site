@@ -1,3 +1,4 @@
+import { asset } from "$fresh/runtime.ts";
 import { useState } from "preact/hooks";
 
 const NotificationBar = () => {
@@ -15,6 +16,7 @@ const NotificationBar = () => {
           <a href="https://github.com/hwclass/buildless-site/issues/new?assignees=&labels=&template=send-a-blog-post.md&title=" target="_blank">send a blog post 📮</a>
           <a href="https://github.com/hwclass/awesome-buildless" target="_blank">add new link(s) 🔗</a>
           <a href="https://github.com/hwclass/buildless-site/issues/new?assignees=&labels=&template=feature_request.md&title=" target="_blank">share a suggestion 🎤</a>
+          <a href="https://www.buymeacoffee.com/hwclass" target="_blank">buy me a coffee</a>
         </p>
       </p>  
     </div>

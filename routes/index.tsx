@@ -1,5 +1,5 @@
 import { asset, Head } from "$fresh/runtime.ts";
-import { HandlerContext, Handlers, PageProps } from "$fresh/server.ts";
+import { Handlers, PageProps } from "$fresh/server.ts";
 import * as marked from "https://esm.sh/marked@4.2.3";
 import * as cheerio from "https://esm.sh/cheerio@1.0.0-rc.12";
 
